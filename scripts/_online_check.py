@@ -24,6 +24,10 @@ ALLOW = {
     "Drop files here or click to browse", "Processed locally. Never uploaded.",
     "Use placeholder", "Placeholder", "Remove", "1200 x 630 recommended", "Shown as",
     "Low (~7%)", "Medium (~15%)", "Quartile (~25%)", "High (~30%)",
+    "Windows", "Wi-Fi", "PDF PDF", "liteboxtools.com https://liteboxtools.com",
+    "tools", "SVG PNG", "IP", "https://liteboxtools.com",
+    # 隐私/条款合规页必须点名的第三方服务名（AdSense 政策要求）
+    "Google Analytics", "Google AdSense", "Vercel Analytics",
 }
 
 def fetch(path):
@@ -38,8 +42,10 @@ for p in PAGES:
     title = m.group(1) if m else "NONE"
     dup = title.count("轻盒工具箱") > 1
     cjk = len(re.findall(r"[\u4e00-\u9fff]", h))
-    # 可见文本节点里的英文片段
-    txt = html.unescape(" ".join(re.findall(r">([^<>]{3,90})<", h)))
+    # 只取 body 内可见文本，去掉 script 与 pre/code 代码块再检查
+    body = re.sub(r"<script[\s\S]*?</script>", "", h)
+    body = re.sub(r"<pre[\s\S]*?</pre>", "", body)
+    txt = html.unescape(" ".join(re.findall(r">([^<>]{3,90})<", body)))
     eng = [x.strip() for x in re.findall(r"[A-Za-z][A-Za-z ,.():/&-]{4,}", txt)]
     eng = [x for x in eng if x not in ALLOW and not x.startswith("LiteBox")]
     status = "OK"
