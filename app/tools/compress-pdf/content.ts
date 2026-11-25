@@ -2,57 +2,43 @@ import type { ToolContent } from "@/lib/tool-content";
 
 const content: ToolContent = {
   intro:
-    "Compress PDF shrinks a bulky file by rendering each page to a JPEG image and rebuilding the document from those images. You control the image quality and resolution, then see exactly how much smaller the result is before downloading. It all runs in your browser with pdfjs and pdf-lib, so nothing is uploaded. Because pages become images, selectable text and links are removed — this works best for scans and image-heavy PDFs.",
+    "PDF 压缩是减小文档体积以便传输和上传的常用手段。扫描件、产品图册和含大量图片的报价单往往动辄几十兆，邮件附件会超限，报关系统也可能拒绝上传。轻盒工具箱的 PDF 压缩工具在浏览器本地运行，通过重新处理内嵌图像来减小文件体积，不会把文档内容发送到任何服务器。对跨境电商和外贸从业者来说，这意味着包含客户信息、报价和合同条款的文件不必离开自己的电脑。工具会显示压缩前后的体积对比，你可以在减小体积和保留清晰度之间做权衡。处理完成后直接下载结果，用于邮件发送、系统上传或长期归档。",
   steps: [
     {
-      title: "Add your PDF",
-      body: "Drop in a PDF or click to browse. It's best suited to scanned or image-heavy documents where a large chunk of the size comes from pictures.",
+      title: "选择要压缩的 PDF",
+      body: "导入本地 PDF 文件。工具会显示原始大小，让你先判断是否值得压缩。已经很小的文档通常不需要再处理。",
     },
     {
-      title: "Set image quality",
-      body: "Use the quality slider (10–95%) to trade sharpness against file size. Lower quality means smaller files; higher quality keeps more detail.",
+      title: "选择压缩档位",
+      body: "轻度压缩适合文字为主、需要保留细节的合同；强力压缩适合图片较多的图册。可以先用中等档位试一次，看体积和清晰度的平衡。",
     },
     {
-      title: "Choose a resolution",
-      body: "Pick Standard (72 dpi), Good (108 dpi), or High (144 dpi). Lower resolutions produce smaller files, higher ones keep text and lines crisper.",
-    },
-    {
-      title: "Compress",
-      body: "Click Compress PDF. Each page is rendered and re-embedded as a compressed image, with a live counter showing which page is being processed.",
-    },
-    {
-      title: "Check the savings and download",
-      body: "The result panel shows the before and after size and the percent saved. If it came out larger, try a lower quality or resolution — then download the compressed PDF.",
+      title: "下载并核对结果",
+      body: "压缩完成后查看体积对比，下载结果文件。打开确认文字和数字仍然清楚，尤其是金额、日期和编号等关键信息。",
     },
   ],
   useCases: [
-    "Shrink a scanned document so it fits an email size limit",
-    "Reduce a photo-heavy brochure before uploading it",
-    "Compress a bulky receipt or statement for storage",
-    "Make an image-based PDF small enough for a web form",
-    "Cut the size of a scanned book or manual to share faster",
-    "Trim a large presentation export down for quick sending",
+    "跨境电商发票与报关单 PDF 合并与减重技巧：先合并单据再压缩，通常能把几十兆的扫描件压到几兆，顺利通过货代系统的上传限制",
+    "把产品图册压缩后通过邮件发给海外客户，避免附件过大被退回",
+    "压缩扫描的合同和公章文件，方便在微信或企业微信里快速传阅",
+    "把多年的档案文档减重后存入容量有限的网盘或移动硬盘",
   ],
   faqs: [
     {
-      q: "Is Compress PDF free?",
-      a: "Yes. Every FreeTools tool is completely free — no account, no watermark, and no sign-up required.",
+      q: "压缩会不会让文字看不清？",
+      a: "文字为主的 PDF 通常影响很小，但扫描件里的文字本质上是图片，压得太狠会模糊。建议先用中等档位，重点检查金额和编号是否清晰。",
     },
     {
-      q: "Is my PDF uploaded to compress it?",
-      a: "No. Every page is rendered and recompressed locally in your browser with pdfjs and pdf-lib, so the file never leaves your device.",
+      q: "文件会被上传吗？",
+      a: "不会。压缩在浏览器本地完成，工具没有上传接口，文档始终留在你的设备上。",
     },
     {
-      q: "Will the text in my PDF still be selectable?",
-      a: "No. Compression works by flattening each page into a compressed image, which removes the selectable text and link layers. It's ideal for scans, not for documents where you need to keep the text.",
+      q: "能压到多小？",
+      a: "取决于文档内容。图片占比越高，可压缩空间越大；纯文字 PDF 本身已经很小，压缩效果有限。",
     },
     {
-      q: "Why did my file get larger instead of smaller?",
-      a: "Some PDFs are already efficiently compressed, so rasterizing them adds size. The result panel warns you when that happens — try a lower quality or resolution, or keep the original.",
-    },
-    {
-      q: "Which settings give the smallest file?",
-      a: "A lower quality percentage combined with the Standard (72 dpi) resolution produces the smallest output. Raise either one if the pages look too soft.",
+      q: "压缩后还可以恢复原样吗？",
+      a: "压缩是有损处理，结果无法还原成原始画质。原文件不会被改动，建议保留原件以备需要。",
     },
   ],
 };

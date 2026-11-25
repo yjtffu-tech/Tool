@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE = "https://www.freetools.click";
+const BASE = "https://liteboxtools.com";
 
 /** robots.txt served at /robots.txt. Everything is crawlable except the API. */
 export default function robots(): MetadataRoute.Robots {

@@ -2,53 +2,44 @@ import type { ToolContent } from "@/lib/tool-content";
 
 const content: ToolContent = {
   intro:
-    "Resize Video scales your footage to a new resolution, right in your browser. Pick a common preset like 1080p, 720p, or 480p, or type exact width and height values, then export an MP4 at the new size. The re-encode runs locally with in-browser FFmpeg (WebAssembly), so your video is never uploaded.",
+    '"视频尺寸调整与压缩是自媒体和电商运营的高频刚需。微信朋友圈和微信群对视频大小有隐性限制，小红书对封面比例有明确要求，电商平台的商品主图视频也常常规定了分辨率区间。轻盒工具箱的视频尺寸调整工具让你在浏览器里直接修改视频的宽高和缩放方式，并按需降低码率来减小体积。"',
   steps: [
     {
-      title: "Add your video",
-      body: "Drag a file onto the drop zone or click to browse. MP4, MOV, and WebM work best. A preview appears and the in-browser engine starts loading automatically.",
+      title: "导入原始视频",
+      body: "把视频拖进上传区域或点击选择文件。工具会在本地读取视频信息，显示原始分辨率、时长和大小，方便你判断需要压缩多少。",
     },
     {
-      title: "Choose a preset or enter dimensions",
-      body: "Pick 1080p, 720p, or 480p from the Preset dropdown to fill in standard sizes, or leave it on Custom and type your own Width and Height in pixels. The fields start at the video's native resolution.",
+      title: "设置目标尺寸与压缩档位",
+      body: "输入目标宽度，高度会按原比例自动计算；也可以直接选择常用预设，比如一千二百八十乘七百二十的横版，或一千零八十乘一千九百二十的竖版。压缩档位越高，体积越小但画质损失越明显。",
     },
     {
-      title: "Resize and export",
-      body: "Click Resize video to scale the picture and re-encode it to MP4 (H.264). Dimensions are rounded to even pixels, which H.264 requires.",
-    },
-    {
-      title: "Preview and download",
-      body: "Watch the resized result in the built-in player, then click Download to save it. Everything is processed on your device.",
+      title: "导出并核对效果",
+      body: "点击开始处理，等待本地编码完成后先预览一遍，重点看文字是否还清晰、人物边缘有没有明显马赛克。确认无误后下载，再拿去平台上传。",
     },
   ],
   useCases: [
-    "Shrink a 4K clip down to 1080p to reduce file size",
-    "Downscale footage to 720p or 480p for faster sharing or email",
-    "Match several clips to the same resolution before merging them",
-    "Fit a video within a platform's maximum resolution",
-    "Produce a lightweight preview copy of a large recording",
-    "Standardize screen recordings to a consistent output size",
+    "微信发送视频超过二十五兆时的压缩技巧：先把宽度降到七百二十像素，码率降一档，通常能把几十兆的片段压到十兆以内，仍然看得清字幕",
+    "小红书竖版封面推荐一千零八十乘一千四百四十，按比例缩放后画面不会被裁掉关键主体",
+    "公众号视频消息建议横版十六比九，宽度一千二百八十像素在手机和电脑上都比较清晰",
+    "跨境电商商品视频统一导出为平台要求的分辨率，避免上传后被二次压缩导致画质崩掉",
+    "把家庭录像压缩后存进容量有限的手机或网盘，保留可看的版本即可",
   ],
   faqs: [
     {
-      q: "Do you upload my video to a server?",
-      a: "No. Resizing runs entirely in your browser using WebAssembly FFmpeg, so your file never leaves your device.",
+      q: "压到多小才适合微信发送？",
+      a: "微信对视频大小的实际限制会随版本变化，稳妥做法是把片段控制在二十兆以内。先从七百二十像素宽度和中档压缩开始，预览能看清字幕就够了。",
     },
     {
-      q: "Is Resize Video free?",
-      a: "Yes, it's free with no account, no sign-up, and no watermark on the output.",
+      q: "缩放会不会把画面压变形？",
+      a: "工具默认按原始宽高比等比缩放，不会变形。如果你输入了自定义宽度，高度会自动按比例算出，只有在你刻意选择非等比模式时才会拉伸。",
     },
     {
-      q: "Does it keep the aspect ratio?",
-      a: "The aspect ratio isn't locked — you can set width and height freely. The presets use standard 16:9 dimensions, but with Custom values you're free to change the proportions, so match the source ratio if you want to avoid stretching.",
+      q: "压缩后画质明显变差怎么办？",
+      a: "提高压缩档位或目标分辨率。文字较多的画面建议至少保留七百二十像素宽度，码率不要压得太狠。原片分辨率低时再压缩只会更糊，这种情形建议先裁剪时长。",
     },
     {
-      q: "Can I upscale to a larger resolution?",
-      a: "Yes, you can enter dimensions larger than the source, though upscaling can't add detail that wasn't captured — it mainly makes the frame bigger. Downscaling generally gives the cleanest results.",
-    },
-    {
-      q: "What format is the resized file?",
-      a: "The output is MP4 (H.264) with the original audio copied through. Width and height are rounded to even pixels as H.264 requires.",
+      q: "支持一次处理多个视频吗？",
+      a: "当前版本一次处理一个文件。这样设计的目的是把内存占用控制在普通笔记本也能承受的范围，你可以连续处理多个文件，每次完成后直接下载。",
     },
   ],
 };

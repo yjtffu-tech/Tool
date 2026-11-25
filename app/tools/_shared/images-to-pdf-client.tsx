@@ -73,7 +73,7 @@ export function ImagesToPdfClient({
   const addFiles = useCallback((files: File[]) => {
     const imgs = files.filter((f) => f.type.startsWith("image/"));
     if (imgs.length === 0) {
-      setError("Those files aren't images.");
+      setError("这些文件不是图片。");
       return;
     }
     setError(null);
@@ -162,7 +162,7 @@ export function ImagesToPdfClient({
         "images.pdf",
       );
     } catch {
-      setError("Could not build the PDF. One of the images may be unreadable.");
+      setError("无法生成 PDF，其中某张图片可能无法读取。");
     } finally {
       setBusy(false);
     }
@@ -229,13 +229,13 @@ export function ImagesToPdfClient({
                 <p className="text-xs text-muted-foreground">{formatBytes(item.file.size)}</p>
               </div>
               <div className="flex shrink-0 items-center gap-0.5">
-                <Button variant="ghost" size="icon" className="h-8 w-8" aria-label="Move up" disabled={index === 0} onClick={() => move(index, index - 1)}>
+                <Button variant="ghost" size="icon" className="h-8 w-8" aria-label="上移" disabled={index === 0} onClick={() => move(index, index - 1)}>
                   <ArrowUp className="h-4 w-4" aria-hidden />
                 </Button>
-                <Button variant="ghost" size="icon" className="h-8 w-8" aria-label="Move down" disabled={index === items.length - 1} onClick={() => move(index, index + 1)}>
+                <Button variant="ghost" size="icon" className="h-8 w-8" aria-label="下移" disabled={index === items.length - 1} onClick={() => move(index, index + 1)}>
                   <ArrowDown className="h-4 w-4" aria-hidden />
                 </Button>
-                <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-danger" aria-label="Remove" onClick={() => remove(item.id)}>
+                <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-danger" aria-label="移除" onClick={() => remove(item.id)}>
                   <X className="h-4 w-4" aria-hidden />
                 </Button>
               </div>
@@ -249,22 +249,22 @@ export function ImagesToPdfClient({
             multiple
             onFiles={addFiles}
             className="border-border/70 px-4 py-6"
-            hint="Add more images"
+            hint="添加更多图片"
           />
         </div>
       </Panel>
 
-      <Panel title="Page layout" bodyClassName="p-4">
+      <Panel title="页面布局" bodyClassName="p-4">
         <div className="max-w-xs space-y-1.5">
-          <Label htmlFor="page-size">Page size</Label>
+          <Label htmlFor="page-size">页面尺寸</Label>
           <Select
             id="page-size"
             value={pageSize}
             onChange={(e) => setPageSize(e.target.value as PageSize)}
           >
-            <option value="fit">Fit page to each image</option>
+            <option value="fit">每页适配一张图片</option>
             <option value="a4">A4 (centered)</option>
-            <option value="letter">US Letter (centered)</option>
+            <option value="letter">美式信纸（居中）</option>
           </Select>
         </div>
       </Panel>

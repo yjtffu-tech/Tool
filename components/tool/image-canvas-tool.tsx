@@ -66,7 +66,7 @@ export function ImageCanvasTool({
       const f = files[0];
       if (!f) return;
       if (!f.type.startsWith("image/")) {
-        setError("That file isn't an image.");
+        setError("该文件不是图片。");
         return;
       }
       setError(null);
@@ -83,7 +83,7 @@ export function ImageCanvasTool({
       };
       image.onerror = () => {
         URL.revokeObjectURL(url);
-        setError("Could not decode that image.");
+        setError("无法解析该图片。");
       };
       image.src = url;
     },
@@ -109,7 +109,7 @@ export function ImageCanvasTool({
       })
       .catch((e) => {
         if (cancelled) return;
-        setError(e instanceof Error ? e.message : "Processing failed.");
+        setError(e instanceof Error ? e.message : "处理失败。");
       });
     return () => {
       cancelled = true;
@@ -174,12 +174,12 @@ export function ImageCanvasTool({
       </Panel>
 
       {controls && (
-        <Panel title="Options" bodyClassName="p-4">
+        <Panel title="选项" bodyClassName="p-4">
           {controls(meta)}
         </Panel>
       )}
 
-      <Panel title="Preview" bodyClassName="flex items-center justify-center overflow-auto bg-muted/30 p-3">
+      <Panel title="预览" bodyClassName="flex items-center justify-center overflow-auto bg-muted/30 p-3">
         <canvas
           ref={canvasRef}
           className="mx-auto max-h-[460px] w-auto max-w-full rounded border border-border"

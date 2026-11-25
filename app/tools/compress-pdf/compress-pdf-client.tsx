@@ -41,7 +41,7 @@ export function CompressPdfClient() {
 
   const loadFile = useCallback(async (file: File) => {
     if (file.type !== "application/pdf" && !/\.pdf$/i.test(file.name)) {
-      setError("That file isn't a PDF.");
+      setError("该文件不是 PDF。");
       return;
     }
     setError(null);
@@ -115,7 +115,7 @@ export function CompressPdfClient() {
       resultUrlRef.current = URL.createObjectURL(blob);
       setResult({ blob, pages: doc.numPages });
     } catch {
-      setError("Could not compress this PDF. It may be encrypted or corrupted.");
+      setError("无法压缩此 PDF，文件可能已加密或损坏。");
     } finally {
       setBusy(false);
       setProgress(null);
@@ -148,7 +148,7 @@ export function CompressPdfClient() {
         <FileDropzone
           accept="application/pdf,.pdf"
           onFiles={(files) => void loadFile(files[0])}
-          hint="PDF only. Best for scanned or image-heavy documents."
+          hint="仅支持 PDF，适合扫描件或图片较多的文档。"
         />
         {error && (
           <p className="rounded-md border border-danger/30 bg-danger/10 px-3 py-2 text-sm text-danger">
@@ -177,10 +177,10 @@ export function CompressPdfClient() {
         </Button>
       </Panel>
 
-      <Panel title="Compression settings" bodyClassName="space-y-4 p-4">
+      <Panel title="压缩设置" bodyClassName="space-y-4 p-4">
         <div className="space-y-1.5">
           <div className="flex items-center justify-between">
-            <Label htmlFor="q">Image quality</Label>
+            <Label htmlFor="q">图片画质</Label>
             <span className="text-xs tabular-nums text-muted-foreground">{quality}%</span>
           </div>
           <Slider
@@ -194,7 +194,7 @@ export function CompressPdfClient() {
           />
         </div>
         <div className="max-w-xs space-y-1.5">
-          <Label htmlFor="res">Resolution</Label>
+          <Label htmlFor="res">分辨率</Label>
           <Select
             id="res"
             value={scale}
@@ -218,16 +218,16 @@ export function CompressPdfClient() {
           {busy ? (
             <>
               <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
-              {progress ? `Compressing ${progress.done}/${progress.total}` : "Compressing"}
+              {progress ? `Compressing ${progress.done}/${progress.total}` : "压缩中"}
             </>
           ) : (
-            "Compress PDF"
+            "压缩 PDF"
           )}
         </Button>
       </Panel>
 
       {result && (
-        <Panel title="Result" bodyClassName="space-y-3 p-4">
+        <Panel title="结果" bodyClassName="space-y-3 p-4">
           <p className="text-sm">
             <span className="font-medium">{formatBytes(originalSize)}</span> →{" "}
             <span className="font-medium">{formatBytes(result.blob.size)}</span>{" "}

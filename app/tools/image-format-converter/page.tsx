@@ -4,7 +4,7 @@ import { ImageFormatConverterClient } from "./image-format-converter-client";
 import content from "./content";
 
 export const metadata: Metadata = {
-  title: "Image Format Converter",
+  title: "在线图片格式转换工具 | 轻盒工具箱",
   description:
     "Convert images between PNG, JPEG, and WebP with a single canvas re-encode. 100% in your browser.",
 };

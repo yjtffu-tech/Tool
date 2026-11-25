@@ -4,8 +4,8 @@ import { VideoToGifClient } from "./video-to-gif-client";
 import content from "./content";
 
 export const metadata: Metadata = {
-  title: "Video to GIF",
-  description: "Turn a short video clip into a looping animated GIF.",
+  title: "在线视频转 GIF 动图工具 | 轻盒工具箱",
+  description: "把短视频片段转成高清循环 GIF，本地 FFmpeg 处理，文件不上传。",
 };
 
 export default function Page() {

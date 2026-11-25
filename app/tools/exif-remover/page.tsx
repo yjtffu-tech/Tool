@@ -4,7 +4,7 @@ import { ExifRemoverClient } from "./exif-remover-client";
 import content from "./content";
 
 export const metadata: Metadata = {
-  title: "EXIF Remover",
+  title: "在线照片隐私信息清除工具 | 轻盒工具箱",
   description:
     "Strip EXIF metadata (location, camera, date) from a photo, right in your browser. No uploads, no sign-up.",
 };

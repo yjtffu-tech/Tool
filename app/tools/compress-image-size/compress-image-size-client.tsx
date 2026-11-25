@@ -53,7 +53,7 @@ export function CompressImageSizeClient() {
     const f = files[0];
     if (!f) return;
     if (!f.type.startsWith("image/")) {
-      setError("That file isn't an image. Drop a PNG, JPG, or WebP file.");
+      setError("该文件不是图片，请拖入 PNG、JPG 或 WebP 文件。");
       return;
     }
     setError(null);
@@ -69,7 +69,7 @@ export function CompressImageSizeClient() {
     };
     img.onerror = () => {
       URL.revokeObjectURL(url);
-      setError("Could not decode that image file.");
+      setError("无法解析该图片文件。");
     };
     img.src = url;
   }, []);
@@ -91,7 +91,7 @@ export function CompressImageSizeClient() {
       canvas.height = height;
       const ctx = canvas.getContext("2d");
       if (!ctx) {
-        setError("Canvas is unavailable in this browser.");
+        setError("当前浏览器不支持 Canvas。");
         return;
       }
       ctx.clearRect(0, 0, width, height);
@@ -126,7 +126,7 @@ export function CompressImageSizeClient() {
         <FileDropzone
           accept="image/png,image/jpeg,image/webp"
           onFiles={handleFiles}
-          hint="PNG, JPG, or WebP. Compress it with a live quality preview."
+          hint="支持 PNG、JPG 或 WebP，可实时预览压缩效果。"
         />
         {error && (
           <p className="rounded-md border border-danger/30 bg-danger/10 px-3 py-2 text-sm text-danger">
@@ -147,7 +147,7 @@ export function CompressImageSizeClient() {
     <div className="space-y-4">
       {/* Controls */}
       <Panel
-        title="Compression settings"
+        title="压缩设置"
         actions={
           <Button variant="ghost" size="sm" onClick={reset}>
             <RotateCcw className="h-3.5 w-3.5" aria-hidden />
@@ -159,7 +159,7 @@ export function CompressImageSizeClient() {
         <div className="grid gap-5 sm:grid-cols-2">
           <div className="space-y-1.5">
             <div className="flex items-center justify-between">
-              <Label htmlFor="quality">Target quality</Label>
+              <Label htmlFor="quality">目标画质</Label>
               <span className="text-xs tabular-nums text-muted-foreground">
                 {quality}%
               </span>
@@ -174,7 +174,7 @@ export function CompressImageSizeClient() {
             />
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="max-width">Max width scaling (pixels)</Label>
+            <Label htmlFor="max-width">最大宽度缩放（像素）</Label>
             <Input
               id="max-width"
               type="number"
@@ -238,7 +238,7 @@ export function CompressImageSizeClient() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={source.url}
-            alt="Original"
+            alt="原图"
             className="mx-auto max-h-[420px] w-auto max-w-full rounded border border-border"
           />
         </Panel>
@@ -246,7 +246,7 @@ export function CompressImageSizeClient() {
           title={
             result
               ? `Compressed · ${result.width}×${result.height}px · JPEG ${quality}%`
-              : "Compressed"
+              : "已压缩"
           }
           bodyClassName="flex items-center justify-center overflow-auto bg-muted/30 p-3"
         >
@@ -254,7 +254,7 @@ export function CompressImageSizeClient() {
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={result.dataUrl}
-              alt="Compressed preview"
+              alt="压缩预览"
               className="mx-auto max-h-[420px] w-auto max-w-full rounded border border-border"
             />
           ) : (

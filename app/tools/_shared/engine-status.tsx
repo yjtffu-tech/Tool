@@ -21,14 +21,14 @@ export function EngineStatus({
       <div className="flex flex-wrap items-center gap-2">
         <Zap className="h-4 w-4 text-accent" aria-hidden />
         <span className="text-sm font-medium text-foreground">Video engine</span>
-        {state === "ready" && <Badge>Ready</Badge>}
+        {state === "ready" && <Badge>就绪</Badge>}
         {state === "loading" && (
           <Badge>
             <Loader2 className="h-3 w-3 animate-spin" aria-hidden />
             Downloading {loadPercent}%
           </Badge>
         )}
-        {state === "error" && <span className="text-xs text-danger">Failed to load</span>}
+        {state === "error" && <span className="text-xs text-danger">加载失败</span>}
       </div>
       {state === "loading" && (
         <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">

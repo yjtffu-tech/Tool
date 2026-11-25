@@ -23,10 +23,10 @@ const TITLE_LIMIT = 60;
 const DESC_LIMIT = 160;
 
 const DEFAULTS = {
-  title: "FreeTools, free private browser utilities",
+  title: "轻盒工具箱，免费私密的浏览器工具",
   description:
-    "Format JSON, generate SVG waves, build CSS animations, and more. Every tool runs entirely in your browser. No uploads, no tracking, no signup.",
-  url: "https://www.freetools.click/tools",
+    "格式化 JSON、生成 SVG 波形、制作 CSS 动画等。所有工具都在浏览器中运行，不上传、不追踪、无需注册。",
+  url: "https://liteboxtools.com/tools",
 };
 
 /** Draw a simple 1200x630 gradient placeholder entirely on a local canvas. */
@@ -50,7 +50,7 @@ function makePlaceholderDataUrl(): string {
   ctx.fillText("1200 x 630", 80, 340);
   ctx.fillStyle = "rgba(255,255,255,0.7)";
   ctx.font = "28px system-ui, sans-serif";
-  ctx.fillText("Placeholder social image", 80, 396);
+  ctx.fillText("占位社交封面", 80, 396);
   return canvas.toDataURL("image/png");
 }
 
@@ -99,7 +99,7 @@ export function SocialPreviewClient() {
     const file = files[0];
     if (!file) return;
     if (!file.type.startsWith("image/")) {
-      setImageError("That file is not an image. Drop a PNG, JPG, or WebP.");
+      setImageError("该文件不是图片，请拖入 PNG、JPG 或 WebP 文件。");
       return;
     }
     setImageError(null);
@@ -112,7 +112,7 @@ export function SocialPreviewClient() {
     setImageError(null);
     const dataUrl = makePlaceholderDataUrl();
     if (!dataUrl) {
-      setImageError("Could not create a canvas placeholder in this browser.");
+      setImageError("当前浏览器无法创建 Canvas 占位图。");
       return;
     }
     setImageSource(dataUrl);
@@ -140,23 +140,23 @@ export function SocialPreviewClient() {
   return (
     <div className="grid gap-4 lg:grid-cols-[320px_1fr]">
       <div className="min-w-0 space-y-4">
-        <Panel title="Page details" bodyClassName="space-y-4">
+        <Panel title="页面信息" bodyClassName="space-y-4">
           <div className="space-y-1.5">
             <div className="flex items-center justify-between">
-              <Label htmlFor="sp-title">Page title</Label>
+              <Label htmlFor="sp-title">页面标题</Label>
               <Counter length={title.length} limit={TITLE_LIMIT} />
             </div>
             <Input
               id="sp-title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder="Your page title"
+              placeholder="你的页面标题"
             />
           </div>
 
           <div className="space-y-1.5">
             <div className="flex items-center justify-between">
-              <Label htmlFor="sp-desc">Meta description</Label>
+              <Label htmlFor="sp-desc">页面描述</Label>
               <Counter length={description.length} limit={DESC_LIMIT} />
             </div>
             <Textarea
@@ -182,12 +182,12 @@ export function SocialPreviewClient() {
           </div>
 
           <div className="space-y-2">
-            <Label>Social image</Label>
+            <Label>社交封面图</Label>
             {image ? (
               <div className="space-y-2">
                 <div className="overflow-hidden rounded-md border border-border">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={image} alt="Selected social" className="aspect-[1.91/1] w-full object-cover" />
+                  <img src={image} alt="当前平台" className="aspect-[1.91/1] w-full object-cover" />
                 </div>
                 <div className="flex gap-2">
                   <Button size="sm" variant="secondary" onClick={usePlaceholder}>
@@ -224,7 +224,7 @@ export function SocialPreviewClient() {
           </p>
         </Panel>
 
-        <Panel title="Meta tags" actions={<CopyButton text={metaSnippet} />}>
+        <Panel title="元标签" actions={<CopyButton text={metaSnippet} />}>
           <pre className="max-h-56 overflow-auto rounded-md bg-muted p-3 font-mono text-xs leading-relaxed text-foreground">
             {metaSnippet}
           </pre>

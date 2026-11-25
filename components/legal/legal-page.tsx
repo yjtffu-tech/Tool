@@ -23,7 +23,7 @@ export function LegalPage({
         {intro && (
           <p className="mt-3 text-base leading-relaxed text-muted-foreground">{intro}</p>
         )}
-        <p className="mt-4 text-xs text-muted-foreground">Last updated: {lastUpdated}</p>
+        <p className="mt-4 text-xs text-muted-foreground">最后更新：{lastUpdated}</p>
       </header>
 
       <div

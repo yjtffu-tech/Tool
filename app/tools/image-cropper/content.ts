@@ -2,57 +2,44 @@ import type { ToolContent } from "@/lib/tool-content";
 
 const content: ToolContent = {
   intro:
-    "Image Cropper lets you trim any photo or graphic down to just the region you want, straight in your browser. Drag a box over the image to select an area, or lock it to a common aspect ratio like 1:1, 4:3, 16:9, or 3:2 for perfectly proportioned crops. The selection maps to the image's true pixels, so what you cut is exactly what you get. Nothing is uploaded — your image never leaves your device.",
+    '"图片裁剪是按需要的比例和区域重新取景，是制作头像、封面图和商品图时的基础操作。微信公众号封面、小红书笔记配图、抖音头像和跨境电商主图各自有不同的尺寸规范，直接用原图上传往往会被平台自动裁掉关键内容。轻盒工具箱的图片裁剪工具在浏览器本地用 Canvas 完成取景和导出，不上传、不注册、不留痕。你可以自由拖动裁剪框，也可以选择常用比例快速构图，工具会实时显示裁剪后的效果。对处理商品实拍图的设计人员和运营来说，本地裁剪意味着未发布的新品图不必经过第三方服务器，降低了素材提前泄露的风险。裁剪完成后可立即下载，或者再做一次格式转换和压缩，得到完全符合平台要求的成品。"',
   steps: [
     {
-      title: "Add your image",
-      body: "Drop a PNG, JPEG, or WebP onto the dropzone, or click to browse. The image appears on the canvas at full resolution, ready to crop.",
+      title: "导入需要裁剪的图片",
+      body: "把图片拖进上传区域或点击选择文件。工具会在本地读取原图并显示完整预览，你可以先判断大致要保留哪个区域。",
     },
     {
-      title: "Choose an aspect ratio",
-      body: "Leave it on Free to crop any shape, or pick 1:1, 4:3, 16:9, or 3:2. When a ratio is set, the selection box stays perfectly proportioned as you drag.",
+      title: "拖动裁剪框并选比例",
+      body: "用鼠标拖动裁剪框的边角调整范围，也可以直接选择一比一、四比三、十六比九等常用比例。裁剪框内的区域就是最终导出内容。",
     },
     {
-      title: "Select the crop area",
-      body: "Drag on the image to draw the crop box. The area outside dims so you can see the result, and the live dimensions show the exact pixel size and position.",
-    },
-    {
-      title: "Fine-tune the numbers",
-      body: "Type exact X, Y, Width, and Height values for pixel-perfect crops, or click Select whole image to reset the box to the full frame.",
-    },
-    {
-      title: "Crop and download",
-      body: "Click Crop & download PNG to save a lossless cut, or Download as JPEG for a smaller file. The output is the exact region you selected.",
+      title: "确认并导出",
+      body: "实时预览确认构图无误后点击导出按钮。本地引擎会按裁剪范围生成新图片，下载后即可上传到目标平台。",
     },
   ],
   useCases: [
-    "Crop a profile picture to a perfect square",
-    "Trim a screenshot down to the important part",
-    "Reframe a photo to 16:9 for a video thumbnail or slide",
-    "Remove borders, watermarks, or dead space from an image",
-    "Cut a product shot to a consistent 4:3 for a catalog",
-    "Extract one detail from a larger picture at full resolution",
+    "小红书封面图推荐三比四竖版，裁剪时把主体放在画面上半部分，避开底部文字遮挡区域",
+    "公众号封面图按二点三五比一裁切，先确认关键元素不会被两端截掉",
+    "电商平台商品主图常用一比一正方形，裁剪时把产品居中并留出适当边距",
+    "把合影照裁成单个头像，省去重新截图的麻烦",
+    "去掉截图四周无关的边缘内容，只保留重点区域用于文档说明",
   ],
   faqs: [
     {
-      q: "Is Image Cropper free?",
-      a: "Yes. Every FreeTools tool is completely free — no account, no watermark, and no sign-up required.",
+      q: "裁剪后还能恢复原图吗？",
+      a: "工具不会修改原文件，只是生成一张新的裁剪结果。你的原始图片保持完整，随时可以重新导入再裁一次。",
     },
     {
-      q: "Is my image uploaded to a server?",
-      a: "No. The image is decoded and cropped entirely in your browser using an HTML canvas, so it never leaves your device.",
+      q: "可以裁成任意尺寸吗？",
+      a: "可以。既能自由拖动裁剪框，也能选常用比例快速构图。需要精确像素尺寸时，可以先按比例裁剪再用尺寸调整工具微调。",
     },
     {
-      q: "Does cropping lose any quality?",
-      a: "No. Cropping copies the selected pixels at full resolution. Save as PNG to keep the exact pixels lossless; JPEG re-encodes for a smaller file.",
+      q: "裁剪会损失画质吗？",
+      a: "按原始像素裁剪不会额外降低画质，导出的区域就是原图对应位置的像素。若原图本身分辨率低，放大查看时自然会显得模糊。",
     },
     {
-      q: "Can I crop to an exact size in pixels?",
-      a: "Yes. Type precise Width and Height (and X/Y offset) into the number fields, or drag freely and then adjust the values for pixel-perfect results.",
-    },
-    {
-      q: "What image formats are supported?",
-      a: "Any format your browser can display — including PNG, JPEG, WebP, and GIF (first frame). You can export the crop as PNG or JPEG.",
+      q: "图片会被上传吗？",
+      a: "不会。裁剪全过程在浏览器内存中完成，工具没有服务端上传接口。",
     },
   ],
 };

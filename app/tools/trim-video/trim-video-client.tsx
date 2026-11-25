@@ -274,8 +274,8 @@ export function TrimVideoClient() {
     } catch {
       setError(
         mode === "copy"
-          ? "Trimming failed. Fast copy cannot handle every codec. Try the precise re-encode mode."
-          : "Trimming failed. This video codec may not be supported by the in-browser engine.",
+          ? "裁剪失败。快速复制无法处理所有编码，请尝试精确重新编码模式。"
+          : "裁剪失败。浏览器内置引擎可能不支持该视频编码。",
       );
     } finally {
       if (ffmpeg) {
@@ -341,7 +341,7 @@ export function TrimVideoClient() {
           <span className="text-sm font-medium text-foreground">
             Video engine
           </span>
-          {engineState === "ready" && <Badge>Ready</Badge>}
+          {engineState === "ready" && <Badge>就绪</Badge>}
           {engineState === "loading" && (
             <Badge>
               <Loader2 className="h-3 w-3 animate-spin" aria-hidden />
@@ -349,7 +349,7 @@ export function TrimVideoClient() {
             </Badge>
           )}
           {engineState === "error" && (
-            <span className="text-xs text-danger">Failed to load</span>
+            <span className="text-xs text-danger">加载失败</span>
           )}
         </div>
         {engineState === "loading" && (
@@ -377,7 +377,7 @@ export function TrimVideoClient() {
       </Panel>
 
       {/* Preview + trim range */}
-      <Panel title="Trim range" bodyClassName="flex flex-col gap-4 p-3">
+      <Panel title="裁剪范围" bodyClassName="flex flex-col gap-4 p-3">
         <video
           ref={videoRef}
           src={videoUrl}
@@ -398,14 +398,14 @@ export function TrimVideoClient() {
 
         <div className="flex flex-wrap items-end gap-3">
           <div className="flex flex-col gap-1.5">
-            <Label htmlFor="trim-start">Start</Label>
+            <Label htmlFor="trim-start">开始</Label>
             <Input
               id="trim-start"
               value={startText}
               onChange={(e) => setStartText(e.target.value)}
               onBlur={commitStartText}
               onKeyDown={(e) => {
-                if (e.key === "Enter") commitStartText();
+                if (e.key === "回车") commitStartText();
               }}
               disabled={trimming}
               className="w-28 font-mono"
@@ -419,7 +419,7 @@ export function TrimVideoClient() {
               onChange={(e) => setEndText(e.target.value)}
               onBlur={commitEndText}
               onKeyDown={(e) => {
-                if (e.key === "Enter") commitEndText();
+                if (e.key === "回车") commitEndText();
               }}
               disabled={trimming}
               className="w-28 font-mono"
@@ -450,9 +450,9 @@ export function TrimVideoClient() {
       </Panel>
 
       {/* Mode + execute */}
-      <Panel title="Trim" bodyClassName="flex flex-col gap-3 p-3">
+      <Panel title="裁剪" bodyClassName="flex flex-col gap-3 p-3">
         <div className="flex flex-col gap-1.5">
-          <Label htmlFor="trim-mode">Mode</Label>
+          <Label htmlFor="trim-mode">模式</Label>
           <Select
             id="trim-mode"
             value={mode}
@@ -460,12 +460,12 @@ export function TrimVideoClient() {
             disabled={trimming}
             className="max-w-xs"
           >
-            <option value="copy">Fast copy (keyframe aligned)</option>
-            <option value="encode">Precise re-encode</option>
+            <option value="copy">快速复制（按关键帧对齐）</option>
+            <option value="encode">精确重新编码</option>
           </Select>
           <p className="text-xs text-muted-foreground">
             {mode === "copy"
-              ? "No re-encoding, nearly instant. Cut points snap to the nearest keyframes, so the clip may start slightly early."
+              ? "不重新编码，几乎瞬间完成。切点会对齐到最近的关键帧，因此片段可能提前一点点开始。"
               : "Re-encodes to H.264 MP4. Frame-exact cuts, but slower on long clips."}
           </p>
         </div>
@@ -509,7 +509,7 @@ export function TrimVideoClient() {
 
       {/* Result */}
       {result && (
-        <Panel title="Result" bodyClassName="flex flex-col gap-3 p-3">
+        <Panel title="结果" bodyClassName="flex flex-col gap-3 p-3">
           <video
             src={result.url}
             controls

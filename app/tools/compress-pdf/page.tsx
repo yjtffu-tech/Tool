@@ -4,7 +4,7 @@ import { CompressPdfClient } from "./compress-pdf-client";
 import content from "./content";
 
 export const metadata: Metadata = {
-  title: "Compress PDF",
+  title: "在线 PDF 压缩工具 | 轻盒工具箱",
   description:
     "Shrink a bulky PDF by rasterizing pages to compressed images. Runs 100% in your browser — no uploads.",
 };

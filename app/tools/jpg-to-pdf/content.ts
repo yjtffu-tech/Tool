@@ -2,53 +2,43 @@ import type { ToolContent } from "@/lib/tool-content";
 
 const content: ToolContent = {
   intro:
-    "JPG to PDF merges your JPG photos into a single, multi-page PDF — one photo per page, in the order you set. Add your images, reorder them by dragging, choose how each page should be sized, and download a finished PDF. It runs entirely in your browser with no uploads, so your photos stay on your device. It's free, with no account or watermark.",
+    "图片转 PDF 是把多张 JPG 或 PNG 图片按指定顺序合成一份 PDF 文档。日常办公中经常遇到这样的场景：用手机拍下纸质发票、合同或手写单据，需要整理成一份可发送、可打印的 PDF 文件。轻盒工具箱的图片转 PDF 工具在浏览器本地用 pdf-lib 引擎把图片逐页排入文档，全程不上传、不注册、不留痕。对于包含客户签名、财务数据或内部资料的图片，本地处理能免去很多隐私方面的顾虑。工具支持拖拽调整图片顺序，输出页面按图片原始比例排布，不会擅自裁切内容。你可以先按金额或日期排列图片，再一次性生成文档，直接用于报销、归档或发送给客户。",
   steps: [
     {
-      title: "Add your JPGs",
-      body: "Drag one or more JPG photos onto the drop zone or click to browse. You can keep adding more using the drop zone beneath the list.",
+      title: "选择多张图片",
+      body: "一次选中多张 JPG 或 PNG 图片，或逐张拖入上传区域。按拍摄顺序导入，便于后续核对。",
     },
     {
-      title: "Arrange the order",
-      body: "Drag rows to reorder them, or use the up and down arrows. Each photo becomes one page in the sequence, and you can remove any you don't need.",
+      title: "调整图片顺序",
+      body: "用拖拽把图片排成想要的先后顺序。报销材料通常按日期排列，合同附件则按签署顺序排列。",
     },
     {
-      title: "Pick a page size",
-      body: "Choose Fit page to each image to size every page to its photo, or A4 or US Letter to center each photo on a standard page with margins.",
-    },
-    {
-      title: "Create the PDF",
-      body: "Click Create PDF to combine your photos into one multi-page document and download it instantly.",
+      title: "生成并下载 PDF",
+      body: "点击生成按钮，本地引擎会把每张图片作为一页写入 PDF。下载后打开确认页面方向和顺序都正确。",
     },
   ],
   useCases: [
-    "Combine phone photos of a document into one PDF to send",
-    "Turn a batch of scanned JPGs into a single file",
-    "Bundle event or product photos into a shareable PDF",
-    "Create a simple photo PDF for printing in order",
-    "Package ID or receipt photos into one document to submit",
-    "Assemble a portfolio of images into a single PDF",
+    "把手机拍的多张发票合成一份 PDF，方便一次性提交报销系统",
+    "把纸质合同逐页拍照后转成 PDF，通过邮件发给客户签署",
+    "把手写会议记录整理成 PDF 文档，归档到知识库",
+    "把产品的多张实拍图合成一份报价附件，发给海外客户查阅，方便对方一次性看完所有细节",
   ],
   faqs: [
     {
-      q: "Is JPG to PDF free?",
-      a: "Yes — completely free, with no account, no watermark, and no sign-up, like all FreeTools tools.",
+      q: "图片顺序错了怎么办？",
+      a: "在生成前用拖拽重新排序即可。原图片不会被修改，你可以反复调整直到顺序满意。",
     },
     {
-      q: "Do my photos get uploaded anywhere?",
-      a: "No. The PDF is created entirely in your browser, so your photos never leave your device.",
+      q: "生成的 PDF 会被压缩吗？",
+      a: "工具按图片原始内容排入页面，不会额外降低画质。如果结果文件太大，可以再用 PDF 压缩工具处理一次。",
     },
     {
-      q: "Can I set the order of the photos?",
-      a: "Yes. Drag the rows or use the up and down arrows to arrange them, and the photos appear in the PDF in that exact order — one photo per page.",
+      q: "图片会被上传到服务器吗？",
+      a: "不会。整个转换在浏览器本地完成，图片不会离开你的设备。",
     },
     {
-      q: "How is each page sized?",
-      a: "Choose Fit page to each image to match every page to its photo, or pick A4 or US Letter to center each photo on a standard page with margins. Pages auto-orient to portrait or landscape to match the photo.",
-    },
-    {
-      q: "Will the photo quality stay the same?",
-      a: "Yes. JPGs are embedded directly into the PDF at their original quality, so the pages match your source photos.",
+      q: "手机竖拍的照片会横过来吗？",
+      a: "不会。工具按图片自身的方向排入页面，竖拍照片保持竖向，横拍照片保持横向。",
     },
   ],
 };

@@ -2,57 +2,44 @@ import type { ToolContent } from "@/lib/tool-content";
 
 const content: ToolContent = {
   intro:
-    "Video to GIF turns a short clip into a smooth, looping animated GIF right in your browser. Drop in an MP4, WebM, or MOV, pick the start time and duration, then dial in the frame rate and width — the tool trims and converts using a two-pass palette for clean, banding-free colour. Because it runs on the powerful FFmpeg engine locally, your video is never uploaded anywhere.",
+    '"视频转 GIF 是把一段短视频变成可循环播放的动图，常用于聊天表情、论坛回帖、产品演示和教程插图。GIF 格式的优势在于几乎所有聊天软件和网页都能自动播放，不需要用户点击，也不需要额外的播放器。轻盒工具箱的视频转 GIF 工具在浏览器本地用 FFmpeg 解码视频帧，再用高质量调色板算法生成动图，颜色过渡自然，不容易出现色带。你可以自由选择片段的起始时间和持续时长，设定帧率与输出宽度，在文件体积和画面流畅度之间找到平衡。"',
   steps: [
     {
-      title: "Add a short clip",
-      body: "Drop a video file, or click to browse. The video engine (~31 MB) downloads once on first use and is then cached by your browser. Shorter clips make far smaller, more shareable GIFs.",
+      title: "选择一段短视频",
+      body: "导入 MP4、WebM、MOV 等常见格式的视频。GIF 文件会随着时长和帧率快速增长，建议先挑出两到四秒最有代表性的画面再开始制作。",
     },
     {
-      title: "Trim to the moment",
-      body: "Set the Start time and Duration in seconds to capture just the part you want. A two-to-four second window is ideal for a reaction or highlight.",
+      title: "设定起点、时长与帧率",
+      body: "填写开始时间和持续时间，再把帧率设为十到十五帧每秒。这个区间在聊天软件里足够流畅，又不会让文件体积失控。宽度可以先设为四百八十像素试试。",
     },
     {
-      title: "Choose frame rate and width",
-      body: "Higher frame rates look smoother but grow the file; 10–15 fps is a good balance. Width sets the output size — height scales automatically to keep the aspect ratio.",
-    },
-    {
-      title: "Make the GIF",
-      body: "Click Make GIF. The tool runs a palette-generation pass and a rendering pass with high-quality Lanczos scaling, then shows a live preview when it finishes.",
-    },
-    {
-      title: "Preview and download",
-      body: "The looping GIF appears instantly. Click Download GIF to save it, or adjust the trim and settings and render again until it looks right.",
+      title: "生成并预览动图",
+      body: "点击生成按钮，本地引擎会先分析调色板再渲染每一帧。完成后页面显示循环预览，觉得体积还是太大就降低帧率或宽度再渲染一次，满意后下载。",
     },
   ],
   useCases: [
-    "Turn a funny moment from a video into a reaction GIF",
-    "Make a looping product or app demo for a landing page",
-    "Create a short GIF for a chat, forum, or issue tracker",
-    "Capture a highlight from gameplay or a screen recording",
-    "Preview an animation as a lightweight, autoplaying GIF",
-    "Share a clip where GIFs autoplay but videos don't",
+    "把产品操作的关键步骤做成循环动图，放进商品详情页或帮助文档",
+    "把影视或直播里的搞笑片段做成表情包，发到微信群和朋友圈",
+    "演示软件界面的交互流程，插入工单或需求文档比静态截图更直观",
+    "把游戏或设计作品的高光瞬间做成动图，发到社区论坛吸引关注",
+    "在没有视频自动播放权限的场合用 GIF 代替短视频，确保对方能看到内容",
   ],
   faqs: [
     {
-      q: "Is Video to GIF free?",
-      a: "Yes. Every FreeTools tool is completely free — no account, no watermark, and no sign-up required.",
+      q: "GIF 文件为什么那么大？",
+      a: "GIF 是较老的格式，每一帧都要完整保存像素信息，时长、帧率和宽度任何一项上升都会明显增大文件。把片段压到三秒、帧率降到十帧、宽度降到四百八十像素通常能控制在几兆以内。",
     },
     {
-      q: "Is my video uploaded to a server?",
-      a: "No. The conversion runs entirely in your browser using FFmpeg compiled to WebAssembly, so your video never leaves your device.",
+      q: "为什么颜色看起来有色块？",
+      a: "GIF 最多只能显示二百五十六种颜色。工具采用双通道调色板算法已经尽量减少色带，如果原视频渐变很多，可以缩小宽度或降低帧率来改善观感。",
     },
     {
-      q: "Why is my GIF file so large?",
-      a: "GIFs are an old format and grow quickly with length, frame rate, and width. Keep the clip to a few seconds, lower the frame rate, and reduce the width to shrink the file.",
+      q: "支持哪些视频格式作为输入？",
+      a: "常见的 MP4、WebM、MOV、MKV、M4V 都可以，本地 FFmpeg 引擎会负责解码，不需要你提前转码。",
     },
     {
-      q: "What video formats can I use?",
-      a: "Common formats like MP4, WebM, MOV, MKV, and M4V work. The FFmpeg engine decodes a wide range of codecs entirely on your device.",
-    },
-    {
-      q: "Why does the first conversion take a moment?",
-      a: "The first time you use a video tool, the browser downloads the ~31 MB FFmpeg engine. After that it is cached, so later conversions start almost instantly.",
+      q: "第一次生成为什么要等比较久？",
+      a: "首次使用任何视频工具都要下载约三十一兆的 FFmpeg 引擎，之后会被浏览器缓存。调色板分析和逐帧渲染本身也需要一点时间，长片段会更慢。",
     },
   ],
 };

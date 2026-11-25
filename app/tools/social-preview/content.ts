@@ -2,57 +2,43 @@ import type { ToolContent } from "@/lib/tool-content";
 
 const content: ToolContent = {
   intro:
-    "Social Media Preview shows how your link will look when it is shared, rendering Google, X, LinkedIn, and Facebook cards side by side from your title, description, URL, and image. Character counters flag titles and descriptions that run past the usual truncation points, and a ready-to-paste block of Open Graph and Twitter meta tags is generated as you type. It is a visual mockup that runs entirely in your browser, so nothing you enter is uploaded.",
+    "社交媒体封面预览是在发布前先看看标题和图片在微信、微博、小红书等平台上大致会呈现成什么样。同一张封面在不同平台的裁切规则不一样，正文标题的字数上限也不同，发布后才发现关键文字被截掉是很多运营人员踩过的坑。轻盒工具箱的社交媒体封面预览工具在浏览器本地工作，内置多种常见平台的展示模板，你可以导入自己的封面图，再填入标题和摘要，即时看到模拟效果。图片和文字不会上传到任何服务器，尚未发布的新品海报或活动文案可以在这里安全检查。工具还提供常用的封面尺寸建议，帮你按平台规范准备素材，减少反复返工。",
   steps: [
     {
-      title: "Enter your page details",
-      body: "Type the page title and meta description. Live counters show 60 characters for the title and 160 for the description, turning red when you go over the recommended length.",
+      title: "导入封面图片",
+      body: "选择本地图片或直接填一个图片链接。工具会在浏览器里加载它用于预览，图片本身不会被上传保存。",
     },
     {
-      title: "Set the URL",
-      body: "Paste the page URL. The tool extracts the domain and displays it exactly as it will appear on the cards.",
+      title: "填写标题与摘要",
+      body: "输入准备发布的标题和描述文字，观察在不同平台模板里是否被截断。标题太长时先在这里调整好再发布。",
     },
     {
-      title: "Add a social image",
-      body: "Drop in a 1200 x 630 image, or click Use placeholder to generate a gradient stand-in on a local canvas. The image is used only for the preview and is never uploaded.",
-    },
-    {
-      title: "Review each platform card",
-      body: "See how the link renders as a Google search result and as X, LinkedIn, and Facebook link cards, so you can catch awkward cropping or truncation before publishing.",
-    },
-    {
-      title: "Copy the meta tags",
-      body: "Copy the generated Open Graph and Twitter card meta tags and paste them into your page's <head> so real platforms render the card the way you intended.",
+      title: "对照效果并调整",
+      body: "切换不同平台模板检查构图。发现主体被裁或文字看不清就回到原图调整，满意后再把素材用于正式发布。",
     },
   ],
   useCases: [
-    "Check how a blog post or landing page will look when shared before you publish",
-    "Tune a title and description to fit within each platform's visible length",
-    "Generate correct og: and twitter: meta tags without writing them by hand",
-    "Compare the same link across Google, X, LinkedIn, and Facebook at a glance",
-    "Preview a share card for a client or teammate for quick sign-off",
-    "Sanity-check a social image's aspect ratio and cropping",
+    "小红书封面图尺寸规范：推荐三比四竖版，关键文字放在画面上半部，预览时重点检查底部是否被界面元素遮挡",
+    "公众号文章的封面图与标题组合预览，避免分享到聊天窗口时标题被截成半句",
+    "微博配图按十六比九裁切预览，确认主体没有被两端切掉",
+    "跨境电商社媒帖子的封面与文案预览，检查中英文混排时的换行效果",
   ],
   faqs: [
     {
-      q: "Is Social Media Preview free?",
-      a: "Yes. Every FreeTools tool is completely free — no account, no watermark, and no sign-up required.",
+      q: "预览结果和真实发布效果完全一样吗？",
+      a: "这是基于常见规范的模拟，帮你提前发现明显的裁切和截断问题。平台界面会更新，正式发布前仍建议在不公开发布的状态下确认一次。",
     },
     {
-      q: "Is my text or image uploaded anywhere?",
-      a: "No. All previews are rendered locally in your browser and the image is loaded straight from your device. Nothing you enter is uploaded or sent to any server.",
+      q: "图片会被保存或上传吗？",
+      a: "不会。图片只在浏览器本地加载用于预览，工具没有上传接口，关闭页面后不会保留。",
     },
     {
-      q: "Are these cards exactly what each platform will show?",
-      a: "They are close, accurate mockups. Platforms may crop or restyle cards slightly and cache content, but the layouts and character limits mirror the real renderers so you can catch problems early.",
+      q: "支持哪些平台的模板？",
+      a: "内置微信、微博、小红书等常见社交平台的封面比例与展示形式，覆盖多数中文运营场景。",
     },
     {
-      q: "Why does my title or description get cut off?",
-      a: "Each platform truncates long text. The counters flag when your title passes about 60 characters or your description passes about 160, which is where truncation typically begins.",
-    },
-    {
-      q: "Do I have to upload the real image to preview it?",
-      a: "No. You can drop in a local image just to see the layout, or use the built-in placeholder. The generated og:image tag points at a conventional path on your domain, which you can edit to your real image URL.",
+      q: "封面图推荐多大尺寸？",
+      a: "小红书常用一千零八十乘一千四百四十竖版，公众号横版封面常用九百乘三百八十三。工具里可以直接对照这些建议。",
     },
   ],
 };

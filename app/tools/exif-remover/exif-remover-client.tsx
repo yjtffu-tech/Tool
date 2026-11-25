@@ -15,7 +15,7 @@ export function ExifRemoverClient() {
 
   return (
     <ImageCanvasTool
-      hint="JPEG, PNG, or WebP. Re-encoding the pixels drops all embedded metadata."
+      hint="支持 JPEG、PNG 或 WebP。重新编码像素会去掉所有内嵌元数据。"
       downloadSuffix="clean"
       outputMime={format === "jpeg" ? "image/jpeg" : "image/png"}
       outputExt={format === "jpeg" ? "jpg" : "png"}
@@ -32,20 +32,20 @@ export function ExifRemoverClient() {
             </span>
           </p>
           <div className="space-y-1.5">
-            <Label htmlFor="exif-format">Output format</Label>
+            <Label htmlFor="exif-format">输出格式</Label>
             <Select
               id="exif-format"
               value={format}
               onChange={(e) => setFormat(e.target.value as Format)}
             >
-              <option value="png">PNG (lossless, no metadata)</option>
-              <option value="jpeg">JPEG (smaller, keep as photo)</option>
+              <option value="png">PNG（无损，不含元数据）</option>
+              <option value="jpeg">JPEG（体积更小，保留照片外观）</option>
             </Select>
           </div>
           {format === "jpeg" && (
             <div className="space-y-1.5">
               <div className="flex items-center justify-between">
-                <Label htmlFor="exif-quality">JPEG quality</Label>
+                <Label htmlFor="exif-quality">JPEG 画质</Label>
                 <span className="text-xs tabular-nums text-muted-foreground">
                   {Math.round(quality * 100)}%
                 </span>
@@ -66,7 +66,7 @@ export function ExifRemoverClient() {
         canvas.width = source.naturalWidth;
         canvas.height = source.naturalHeight;
         const ctx = canvas.getContext("2d");
-        if (!ctx) throw new Error("Canvas is not supported in this browser.");
+        if (!ctx) throw new Error("当前浏览器不支持 Canvas。");
         if (format === "jpeg") {
           // JPEG has no alpha; flatten transparency onto white.
           ctx.fillStyle = "#ffffff";

@@ -6,7 +6,7 @@ import { Button, type ButtonProps } from "@/components/ui/button";
 
 export function CopyButton({
   text,
-  label = "Copy",
+  label = "复制",
   variant = "secondary",
   size = "sm",
   ...props
@@ -37,7 +37,7 @@ export function CopyButton({
   return (
     <Button variant={variant} size={size} onClick={onCopy} {...props}>
       {copied ? <Check className="h-3.5 w-3.5 text-accent" /> : <Copy className="h-3.5 w-3.5" />}
-      {copied ? "Copied" : label}
+      {copied ? "已复制" : label}
     </Button>
   );
 }

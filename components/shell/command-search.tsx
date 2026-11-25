@@ -64,7 +64,7 @@ export function CommandSearch({
       className="fixed inset-0 z-50 flex items-start justify-center bg-black/40 p-4 pt-[12vh] backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
-      aria-label="Search tools"
+      aria-label="搜索工具"
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
@@ -86,7 +86,7 @@ export function CommandSearch({
                 e.preventDefault();
                 setActive((a) => Math.max(a - 1, 0));
               }
-              if (e.key === "Enter" && results[active]) {
+              if (e.key === "回车" && results[active]) {
                 e.preventDefault();
                 go(results[active].slug);
               }

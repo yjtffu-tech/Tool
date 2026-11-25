@@ -4,7 +4,7 @@ import { ResizeVideoClient } from "./resize-video-client";
 import content from "./content";
 
 export const metadata: Metadata = {
-  title: "Resize Video",
+  title: "在线视频尺寸调整与压缩工具 | 轻盒工具箱",
   description:
     "Scale a video to a new resolution or preset. Runs 100% in your browser — no uploads.",
 };

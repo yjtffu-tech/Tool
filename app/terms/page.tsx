@@ -3,237 +3,84 @@ import { LegalPage } from "@/components/legal/legal-page";
 import { LIVE_TOOL_COUNT } from "@/lib/tools-registry";
 
 export const metadata: Metadata = {
-  title: "Terms of Use",
+  title: "使用条款 - 轻盒工具箱",
   description:
-    "The terms that apply when you use FreeTools — free, in-browser tools provided as-is.",
+    "轻盒工具箱的使用条款：免费、浏览器本地运行的工具，用户合法使用边界与免责声明。",
 };
 
 export default function Page() {
   return (
     <LegalPage
-      title="Terms of Use"
-      lastUpdated="14 July 2026"
-      intro="FreeTools is a set of free utilities that run entirely inside your browser. These terms explain what you can expect from us, what we expect from you, and the limits of what free software can promise."
+      title="使用条款"
+      lastUpdated="2026 年 11 月 25 日"
+      intro="轻盒工具箱是一套完全在你的浏览器中运行的免费工具。本条款说明你对本站的合理预期、我们对你的要求，以及免费软件能够承诺的边界。"
     >
       <p>
-        FreeTools (the &ldquo;Service&rdquo;) is operated by FirstLink AI (&ldquo;we&rdquo;,
-        &ldquo;us&rdquo;, &ldquo;our&rdquo;) at{" "}
-        <a href="https://www.freetools.click">https://www.freetools.click</a>. These Terms of
-        Use are a legal agreement between you and us.
+        轻盒工具箱（以下简称「本站」或「我们」）运营于{" "}
+        <a href="https://liteboxtools.com">https://liteboxtools.com</a>。
+        本使用条款是你与我们就使用本站达成的法律协议。
       </p>
 
-      <h2>1. Acceptance of these terms</h2>
+      <h2>一、接受本条款</h2>
       <p>
-        By visiting the site or using any tool on it, you agree to these terms. If you do not
-        agree with any part of them, please do not use the Service. That is the whole of the
-        arrangement &mdash; there is nothing to sign and nothing to cancel.
+        访问本站或使用其中任何工具，即表示你同意本条款。如果你不同意其中任何部分，请勿使用本站。
+        协议的全部内容就是本页——无需签署，也没有需要取消的订阅。
       </p>
 
-      <h2>2. The Service</h2>
+      <h2>二、服务内容</h2>
       <p>
-        FreeTools provides {LIVE_TOOL_COUNT} utilities for working with video, audio, PDF and other
-        documents, images, and text. Every tool runs on your own device, in your own browser,
-        using technologies such as WebAssembly, HTML5 Canvas and the Web Audio API. Your files
-        are not uploaded to us.
+        本站提供 {LIVE_TOOL_COUNT} 款工具，覆盖视频、音频、PDF、图片与文本处理。
+        每款工具都在你自己的设备上、通过浏览器运行，使用 WebAssembly、HTML5 Canvas 与 Web Audio API 等技术。
+        你的文件不会上传到我们这里。
       </p>
       <ul>
-        <li>
-          <strong>The Service is entirely free.</strong> There is no account, no sign-up, and
-          no payment.
-        </li>
-        <li>
-          We may add, change, or remove tools, features, and pages at any time, without notice.
-        </li>
-        <li>
-          <strong>Availability is not guaranteed.</strong> The site may be unavailable,
-          interrupted, or discontinued at any time.
-        </li>
+        <li>所有工具免费使用，无需注册账号。</li>
+        <li>工具在浏览器本地处理文件，我们不接收、不存储你的文件。</li>
+        <li>部分工具首次使用需要下载浏览器端引擎（如 FFmpeg），由你的浏览器缓存。</li>
       </ul>
 
-      <h2>3. Your files and your content</h2>
-      <p>
-        <strong>You keep all rights to the files you process.</strong> Because processing happens
-        locally on your device, we never receive, store, or transmit your content, and we claim
-        no licence or ownership over it whatsoever. Nothing in these terms grants us any right
-        to your files, because we never have them in the first place.
-      </p>
-      <p>
-        In return, you are solely responsible for the files you choose to process, for having
-        the right to process them, and for keeping your own backups of anything that matters to
-        you.
-      </p>
-
-      <h2>4. Acceptable use</h2>
-      <p>You agree not to use FreeTools to:</p>
+      <h2>三、合法使用</h2>
+      <p>你承诺仅将本站用于合法目的，不得用于：</p>
       <ul>
-        <li>break any law that applies to you;</li>
-        <li>infringe copyright, trade marks, or any other intellectual property rights;</li>
-        <li>process material you have no right to process;</li>
-        <li>
-          create unlawful, harmful, or deceptive content &mdash; for example forged documents,
-          falsified records, or material intended to defraud or impersonate;
-        </li>
-        <li>
-          disrupt, overload, probe, or attack the site or its infrastructure, or reverse-engineer
-          it for the purpose of abuse;
-        </li>
-        <li>
-          scrape, mirror, or redistribute the site or its code as your own service or product.
-        </li>
+        <li>处理、传播或分发任何违反中国大陆及你所在地区法律法规的内容；</li>
+        <li>侵犯他人知识产权、肖像权、隐私权或其他合法权益；</li>
+        <li>制作或传播恶意软件、钓鱼材料、欺诈性文件或用于网络攻击的内容；</li>
+        <li>绕过技术保护措施，或对本站进行反向工程、恶意爬取、干扰服务运行。</li>
       </ul>
 
-      <h2>5. No professional advice, no reliance</h2>
+      <h2>四、知识产权</h2>
       <p>
-        The tools and their outputs are provided for general use only. They are not a substitute
-        for professional judgement, nor for dedicated legal, financial, or archival software.
+        本站的界面设计、文字内容与源代码归轻盒工具箱所有。你通过工具生成的文件归你所有——
+        我们不主张对它们拥有任何权利。本站显示的第三方商标（如 Google、平台名称）归各自权利人所有。
+      </p>
+
+      <h2>五、免责声明</h2>
+      <p>
+        本站按「现状」提供服务，不提供任何明示或暗示的保证。我们尽力保证工具正确运行，
+        但由于浏览器环境、设备性能与文件格式的差异，无法保证在任何情况下都完全无误。
       </p>
       <ul>
-        <li>
-          The <strong>Invoice Generator does not constitute legal, tax, or accounting advice</strong>.
-          It produces a document; whether that document meets the invoicing, tax, or record-keeping
-          requirements that apply to you is for you (and your accountant) to determine.
-        </li>
-        <li>
-          Document conversions are <strong>text-fidelity only</strong> and should not be relied on
-          where exact reproduction matters.
-        </li>
+        <li>请在重要文件上保留备份，不要仅依赖本站的处理结果。</li>
+        <li>对于因使用本站导致的任何数据丢失、利润损失或间接损失，我们在法律允许范围内不承担责任。</li>
+        <li>本站不承诺不间断或永久可用，我们可能随时调整、暂停或终止部分功能。</li>
       </ul>
+
+      <h2>六、广告与第三方链接</h2>
       <p>
-        Do not rely on any output of the Service for a purpose where an error would cause you
-        loss, without checking it yourself first.
+        本站通过 Google AdSense 展示广告以维持免费运营。广告内容由第三方提供，
+        我们对广告内容的准确性或合法性不承担责任。本站可能链接到第三方网站，
+        这些网站不受本条款约束，请自行判断其可靠性。
       </p>
 
-      <h2>6. Accuracy and real limitations</h2>
+      <h2>七、条款更新</h2>
       <p>
-        We would rather be specific than vague. These are genuine limits of how the tools work:
-      </p>
-      <ul>
-        <li>
-          <strong>Results depend on your device.</strong> Processing runs in your browser, so
-          performance and success depend on your browser, hardware, and available memory. Large
-          files may be slow, or may fail outright.
-        </li>
-        <li>
-          <strong>Some operations are lossy or approximate by design.</strong> Compression
-          reduces quality. <strong>Compress PDF and Unlock PDF rasterise pages</strong>, which
-          removes the selectable text layer &mdash; the output looks the same but the text is no
-          longer selectable or searchable.
-        </li>
-        <li>
-          <strong>PDF&nbsp;&harr;&nbsp;Office conversions are text-fidelity only.</strong> Fonts,
-          images, and exact layout are not reproduced. PDF-to-Excel table detection is heuristic
-          and will not be correct for every document.
-        </li>
-        <li>
-          <strong>Merge Videos requires clips with the same codec, resolution, and frame rate.</strong>{" "}
-          Mismatched clips will not merge cleanly.
-        </li>
-        <li>
-          Recordings save as <strong>WebM</strong> on most browsers, which is what the browser
-          itself supports.
-        </li>
-      </ul>
-      <p>
-        <strong>Always keep an original copy of any file before you process it.</strong> We cannot
-        recover or restore your files under any circumstances, because we never hold them.
+        我们可能更新本条款。更新后的版本将在本页公布并标注新的更新日期。继续使用本站即表示你接受更新后的条款。
       </p>
 
-      <h2>7. Third-party components and hosting</h2>
+      <h2>八、联系我们</h2>
       <p>
-        FreeTools is built on open-source software, including FFmpeg (via WebAssembly), pdf-lib,
-        pdf.js, JSZip, and others. Those components are governed by their own licences, and we
-        make no warranty on their behalf. The FFmpeg engine is downloaded to your browser from
-        the public CDN <strong>unpkg.com</strong> when you use a tool that needs it. Hosting for
-        the site is provided by Vercel. See our <a href="/privacy">Privacy Policy</a> for what
-        that means for your data.
-      </p>
-
-      <h2>8. Intellectual property</h2>
-      <p>
-        The FreeTools name, branding, site design, and code are owned by us or our respective
-        licensors. We grant you a personal, non-exclusive, revocable licence to use the site for
-        its intended purpose: processing your own files. That licence does not give you the right
-        to copy, rebrand, resell, or redistribute the site itself.
-      </p>
-
-      <h2>9. Disclaimer of warranties</h2>
-      <p>
-        <strong>
-          THE SERVICE IS PROVIDED &ldquo;AS IS&rdquo; AND &ldquo;AS AVAILABLE&rdquo;, WITHOUT
-          WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED.
-        </strong>{" "}
-        To the fullest extent permitted by law, we disclaim all warranties, including implied
-        warranties of merchantability, fitness for a particular purpose, and non-infringement,
-        and we do not warrant that the Service will be uninterrupted, secure, or error-free, or
-        that any output will be accurate, complete, or fit for your purpose. You use FreeTools
-        at your own risk.
-      </p>
-
-      <h2>10. Limitation of liability</h2>
-      <p>
-        To the maximum extent permitted by the laws of the Republic of the Philippines, we will
-        not be liable for any indirect, incidental, special, consequential, or exemplary damages,
-        or for any loss of data, files, profits, revenue, goodwill, or business, arising out of
-        or connected with your use of (or inability to use) the Service.
-      </p>
-      <p>
-        Because the Service is provided free of charge, our aggregate liability to you for any
-        claim relating to the Service is limited to the maximum extent permitted by law.
-      </p>
-      <p>
-        Some jurisdictions do not allow the exclusion of certain warranties or the limitation of
-        certain damages, so some of the above may not apply to you. In that case, our liability
-        is limited to the smallest amount permitted by the law that applies.
-      </p>
-
-      <h2>11. Indemnity</h2>
-      <p>
-        You agree to indemnify and hold us harmless from any claim, demand, loss, or expense
-        (including reasonable legal fees) arising out of your misuse of the Service, your breach
-        of these terms, or your violation of any law or third-party right.
-      </p>
-
-      <h2>12. Privacy</h2>
-      <p>
-        How we handle the limited information we do collect is set out in our{" "}
-        <a href="/privacy">Privacy Policy</a>, which forms part of these terms.
-      </p>
-
-      <h2>13. Changes to these terms</h2>
-      <p>
-        We may update these terms from time to time. When we do, we will change the &ldquo;Last
-        updated&rdquo; date at the top of this page. Continuing to use the Service after a change
-        means you accept the revised terms.
-      </p>
-
-      <h2>14. Termination and suspension</h2>
-      <p>
-        There is no account to terminate, but we may restrict or block access to the Service
-        &mdash; for anyone, at any time, without notice &mdash; where we reasonably believe it is
-        being abused, attacked, or used in breach of these terms.
-      </p>
-
-      <h2>15. Severability and entire agreement</h2>
-      <p>
-        If any provision of these terms is found to be unenforceable, that provision will be
-        limited or removed to the minimum extent necessary, and the remaining provisions will
-        stay in full force. Our failure to enforce a provision is not a waiver of it. These
-        terms, together with the Privacy Policy, are the entire agreement between you and us
-        regarding the Service, and replace any earlier understanding.
-      </p>
-
-      <h2>16. Governing law and jurisdiction</h2>
-      <p>
-        These terms are governed by the laws of the <strong>Republic of the Philippines</strong>,
-        without regard to its conflict-of-law rules. Any dispute arising out of or relating to
-        these terms or the Service is subject to the exclusive jurisdiction of the competent
-        courts of the Philippines.
-      </p>
-
-      <h2>17. Contact</h2>
-      <p>
-        FreeTools is operated by <strong>FirstLink AI</strong>. Questions about these terms can be
-        sent to <a href="mailto:privacy@freetools.click">privacy@freetools.click</a>.
+        对本条款有任何疑问，请发送邮件至{" "}
+        <a href="mailto:contact@liteboxtools.com">contact@liteboxtools.com</a>。
       </p>
     </LegalPage>
   );

@@ -6,34 +6,29 @@ import { Providers } from "@/components/providers";
 import { AppShell } from "@/components/shell/app-shell";
 import "./globals.css";
 
-const TITLE = "FreeTools · Privacy-first web utilities";
+const TITLE = "轻盒工具箱 - 免费在线工具，100% 本地浏览器处理";
 const DESCRIPTION =
-  "60 free developer, design, media, and productivity tools that run entirely in your browser. Your files never leave your device.";
+  "轻盒工具箱提供视频转换、图片压缩、PDF 合并拆分等 14 款免费在线工具。全部在浏览器本地运行，文件不上传、无需注册、无水印。";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.freetools.click"),
+  metadataBase: new URL("https://liteboxtools.com"),
   title: {
     default: TITLE,
-    template: "%s · FreeTools",
+    template: "%s | 轻盒工具箱",
   },
   description: DESCRIPTION,
-  applicationName: "FreeTools",
-  // NOTE: deliberately no title/description/url here. Child pages (e.g. each
-  // tool) set their own `title`/`description`, and Next falls back to those for
-  // og:title / og:description only when they are absent at this level —
-  // otherwise every page would share the generic site title. og:url is omitted
-  // for the same reason: a root value would wrongly advertise the homepage as
-  // the canonical URL of every tool page. Scrapers use the fetched URL instead.
+  applicationName: "轻盒工具箱",
+  keywords: [
+    "在线工具", "视频转换", "图片压缩", "PDF合并", "PDF拆分", "二维码生成",
+    "免费工具", "本地处理", "隐私保护", "轻盒工具箱", "LiteBox",
+  ],
   openGraph: {
-    siteName: "FreeTools",
-    locale: "en_US",
+    siteName: "轻盒工具箱",
+    locale: "zh_CN",
     type: "website",
-    // og:image comes from app/opengraph-image.tsx (site) and
-    // app/tools/<slug>/opengraph-image.tsx (per tool).
   },
   twitter: {
     card: "summary_large_image",
-    // twitter:image comes from app/twitter-image.tsx.
   },
 };
 
@@ -47,7 +42,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
-      lang="en"
+      lang="zh-CN"
       suppressHydrationWarning
       className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
@@ -55,9 +50,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <AppShell>{children}</AppShell>
         </Providers>
-
-        {/* Cookieless, privacy-friendly traffic stats. Sets no cookies and does
-            not track visitors across sites — keeps our "no cookies" promise true. */}
         <Analytics />
       </body>
     </html>

@@ -46,7 +46,7 @@ export function VideoToGifClient() {
         (f) => f.type.startsWith("video/") || /\.(mp4|webm|mov|mkv|m4v|avi)$/i.test(f.name),
       );
       if (!vid) {
-        setError("That file isn't a video.");
+        setError("该文件不是视频。");
         return;
       }
       setError(null);
@@ -122,7 +122,7 @@ export function VideoToGifClient() {
       setRunPercent(100);
     } catch {
       setError(
-        "Could not make the GIF. Check that the start time falls inside the clip and try a shorter duration.",
+        "无法生成 GIF。请确认开始时间在视频时长内，并尝试缩短持续时间。",
       );
     } finally {
       if (ff) {
@@ -169,7 +169,7 @@ export function VideoToGifClient() {
         </div>
 
         <div className="space-y-1.5">
-          <Label htmlFor="v2g-start">Start time (seconds)</Label>
+          <Label htmlFor="v2g-start">开始时间（秒）</Label>
           <Input
             id="v2g-start"
             type="number"
@@ -181,7 +181,7 @@ export function VideoToGifClient() {
         </div>
 
         <div className="space-y-1.5">
-          <Label htmlFor="v2g-dur">Duration (seconds)</Label>
+          <Label htmlFor="v2g-dur">持续时长（秒）</Label>
           <Input
             id="v2g-dur"
             type="number"
@@ -195,7 +195,7 @@ export function VideoToGifClient() {
 
         <div className="space-y-1.5">
           <div className="flex items-center justify-between">
-            <Label htmlFor="v2g-fps">Frame rate</Label>
+            <Label htmlFor="v2g-fps">帧率</Label>
             <span className="text-xs font-medium text-foreground">{fps} fps</span>
           </div>
           <Slider
@@ -210,7 +210,7 @@ export function VideoToGifClient() {
 
         <div className="space-y-1.5">
           <div className="flex items-center justify-between">
-            <Label htmlFor="v2g-width">Width</Label>
+            <Label htmlFor="v2g-width">宽度</Label>
             <span className="text-xs font-medium text-foreground">{width}px</span>
           </div>
           <Slider
@@ -249,11 +249,11 @@ export function VideoToGifClient() {
       )}
 
       {result && (
-        <Panel title="Result" bodyClassName="flex flex-col gap-3 p-3">
+        <Panel title="结果" bodyClassName="flex flex-col gap-3 p-3">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={result.url}
-            alt="Generated GIF preview"
+            alt="生成的 GIF 预览"
             className="mx-auto h-auto max-h-[420px] max-w-full rounded-md border border-border bg-muted"
           />
           <div className="flex flex-wrap items-center gap-3">

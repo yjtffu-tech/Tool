@@ -19,7 +19,7 @@ export function SidebarNav({
   const pathname = usePathname();
 
   return (
-    <nav className="flex flex-col gap-5 px-2 pb-6" aria-label="Tools">
+    <nav className="flex flex-col gap-5 px-2 pb-6" aria-label="工具">
       {TOOL_CATEGORIES.map((category) => (
         <div key={category}>
           {!collapsed && (

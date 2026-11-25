@@ -2,53 +2,48 @@ import type { ToolContent } from "@/lib/tool-content";
 
 const content: ToolContent = {
   intro:
-    "Image Format Converter changes an image between PNG, JPEG, and WebP with a single canvas re-encode in your browser. Drop in a file, pick a target format, and the preview and file size update automatically so you can compare before saving. Nothing is uploaded, so your image stays entirely on your device.",
+    '"图片格式转换是把一张图片从 JPG、PNG、WebP 等格式改写成另一种格式。不同使用场景对格式的要求并不一样：公众号和电商详情页偏爱兼容性最好的 JPG，需要透明背景的设计稿适合 PNG，追求更小体积的网页素材则越来越多地使用 WebP。轻盒工具箱的图片格式转换器完全在浏览器本地运行，借助 Canvas 读取像素再按目标格式重新编码。你的图片不会被上传、不会被存储，也不会经过任何第三方服务。对于处理商业设计稿、客户提供的产品图或者包含个人信息的文件，这种本地处理方式能免去很多合规上的顾虑。工具会保留原始清晰度，转换后可以直接预览和下载，还支持在转换的同时微调画质，让结果既符合平台要求又尽量保持画面观感。"',
   steps: [
     {
-      title: "Add your image",
-      body: "Drop an image onto the drop zone. The tool detects its current format and shows it as the read-only source format.",
+      title: "导入要转换的图片",
+      body: "点击选择文件或把图片拖入上传区域。支持 JPG、PNG、WebP 之间的互相转换，一次处理一张，方便你确认每张图的转换效果。",
     },
     {
-      title: "Pick a target format",
-      body: "Choose PNG, JPEG, or WebP. It defaults to a format different from the source, and the image is re-encoded immediately whenever you change it.",
+      title: "选择目标格式与画质",
+      body: "根据用途选择输出格式：要兼容性选 JPG，要透明背景选 PNG，要体积更小选 WebP。有损格式可以调整画质，透明背景请确认目标格式支持。",
     },
     {
-      title: "Preview the result",
-      body: "The converted image appears in the preview, and a summary line shows the source format and size next to the target format and size, including how much smaller or larger the result is.",
-    },
-    {
-      title: "Download the converted file",
-      body: "Click Download to save the image in the new format, named after your original file with the correct extension.",
+      title: "转换并下载",
+      body: "点击转换按钮，本地处理完成后显示结果预览。确认透明区域、颜色和清晰度都符合预期，再下载到本地使用。",
     },
   ],
   useCases: [
-    "Convert a PNG to WebP to shave off file size for the web",
-    "Turn a WebP into a PNG or JPEG for an app that doesn't support WebP",
-    "Flatten a transparent PNG to a JPEG with a clean white background",
-    "Standardize a batch of mixed images to one format, one at a time",
-    "Produce a JPEG version of a screenshot for easier sharing",
-    "Compare how the same image weighs in across PNG, JPEG, and WebP",
+    "把设计师给的 PNG 转成 JPG，减小商品详情页图片体积，加快手机端加载",
+    "把截图从 JPG 换成支持透明的 WebP，方便叠加到深色背景的设计稿里",
+    "把 WebP 素材转回 JPG，兼容还不支持新格式的旧系统或客户设备",
+    "给跨境电商平台准备图片，按不同站点要求输出不同格式版本",
+    "转换前先本地预览效果，避免上传后才发现透明背景变成黑底",
   ],
   faqs: [
     {
-      q: "Is the Image Format Converter free?",
-      a: "Yes. Every FreeTools tool is completely free — no account, no watermark, and no sign-up required.",
+      q: "转换会损失画质吗？",
+      a: "转成 JPG 或 WebP 这类有损格式会有轻微损失，画质档位越高损失越小。转 PNG 是无损的，但文件会明显变大。建议根据用途权衡。",
     },
     {
-      q: "Is my image uploaded anywhere?",
-      a: "No. The image is decoded and re-encoded on a local canvas in your browser, so it never leaves your device.",
+      q: "透明背景转换后为什么变黑？",
+      a: "JPG 不支持透明通道，透明区域会被填充成黑色或其他底色。需要透明背景时请选择 PNG 或 WebP。",
     },
     {
-      q: "What happens to transparency when I convert to JPEG?",
-      a: "JPEG has no alpha channel, so transparent areas are filled with a white background before encoding to avoid turning black. Convert to PNG or WebP if you need to keep transparency.",
+      q: "图片会被上传到服务器吗？",
+      a: "不会。转换在浏览器本地完成，工具没有上传端点，图片不会离开你的设备。",
     },
     {
-      q: "Which formats are supported?",
-      a: "You can convert to PNG, JPEG, or WebP. Most common image types can be loaded as the source; the output is encoded via your browser's canvas at high quality.",
+      q: "WebP 在所有平台都能用吗？",
+      a: "主流浏览器和微信、微博等应用都已支持 WebP，但少数旧系统或企业内网工具可能不识别。遇到兼容问题就转回 JPG。",
     },
     {
-      q: "Will the converted file always be smaller?",
-      a: "Not always. WebP and JPEG are usually smaller than PNG, but converting a JPEG to PNG can increase the size. The summary line shows the exact size difference so there are no surprises.",
+      q: "能一次转换很多张图片吗？",
+      a: "当前一次一张。连续转换多张时每张结果单独下载，不会产生任何费用或次数限制。",
     },
   ],
 };

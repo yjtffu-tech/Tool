@@ -7,8 +7,6 @@ import {
   PanelLeftClose,
   PanelLeftOpen,
   Search,
-  Smartphone,
-  Tag,
   Wrench,
   X,
 } from "lucide-react";
@@ -22,11 +20,11 @@ import { cn } from "@/lib/utils";
 
 function Logo({ compact = false }: { compact?: boolean }) {
   return (
-    <Link href="/" className="flex items-center gap-2 px-2" aria-label="FreeTools home">
+    <Link href="/" className="flex items-center gap-2 px-2" aria-label="轻盒工具箱首页">
       <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-accent text-accent-foreground">
         <Wrench className="h-4 w-4" aria-hidden />
       </span>
-      {!compact && <span className="text-sm font-semibold tracking-tight">FreeTools</span>}
+      {!compact && <span className="text-sm font-semibold tracking-tight">LiteBox</span>}
     </Link>
   );
 }
@@ -77,7 +75,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <Button
               variant="ghost"
               size="icon"
-              aria-label="Collapse sidebar"
+              aria-label="收起侧边栏"
               onClick={() => setCollapsed(true)}
             >
               <PanelLeftClose className="h-4 w-4" />
@@ -89,7 +87,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <Button
               variant="ghost"
               size="icon"
-              aria-label="Expand sidebar"
+              aria-label="展开侧边栏"
               onClick={() => setCollapsed(false)}
             >
               <PanelLeftOpen className="h-4 w-4" />
@@ -101,15 +99,15 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </div>
         <div className="border-t border-border p-2">
           <Link
-            href="/pricing"
-            title={collapsed ? "Pricing" : undefined}
+            href="/about"
+            title={collapsed ? "关于我们" : undefined}
             className={cn(
               "flex items-center gap-2.5 rounded-md px-2 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
               collapsed && "justify-center px-0 py-2",
             )}
           >
-            <Tag className="h-4 w-4 shrink-0" aria-hidden />
-            {!collapsed && <span>Pricing</span>}
+            <Wrench className="h-4 w-4 shrink-0" aria-hidden />
+            {!collapsed && <span>关于我们</span>}
           </Link>
         </div>
       </aside>
@@ -125,7 +123,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           <div className="absolute inset-y-0 left-0 flex w-72 max-w-[85vw] flex-col bg-card shadow-xl">
             <div className="flex h-14 shrink-0 items-center justify-between border-b border-border pr-2">
               <Logo />
-              <Button variant="ghost" size="icon" aria-label="Close menu" onClick={closeDrawer}>
+              <Button variant="ghost" size="icon" aria-label="关闭菜单" onClick={closeDrawer}>
                 <X className="h-4 w-4" />
               </Button>
             </div>
@@ -134,12 +132,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </div>
             <div className="border-t border-border p-2">
               <Link
-                href="/pricing"
+                href="/about"
                 onClick={closeDrawer}
                 className="flex items-center gap-2.5 rounded-md px-2 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
               >
-                <Tag className="h-4 w-4 shrink-0" aria-hidden />
-                <span>Pricing</span>
+                <Wrench className="h-4 w-4 shrink-0" aria-hidden />
+                <span>关于我们</span>
               </Link>
             </div>
           </div>
@@ -153,7 +151,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             variant="ghost"
             size="icon"
             className="lg:hidden"
-            aria-label="Open menu"
+            aria-label="打开菜单"
             onClick={() => setDrawerOpen(true)}
           >
             <Menu className="h-4 w-4" />
@@ -166,10 +164,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             type="button"
             onClick={() => setSearchOpen(true)}
             className="flex h-9 w-full max-w-xs items-center gap-2 rounded-md border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:bg-muted"
-            aria-label="Search tools"
+            aria-label="搜索工具"
           >
             <Search className="h-3.5 w-3.5" aria-hidden />
-            <span className="flex-1 text-left">Search tools...</span>
+            <span className="flex-1 text-left">搜索工具...</span>
             <kbd className="hidden rounded border border-border bg-muted px-1.5 py-0.5 text-[10px] sm:inline">
               Ctrl K
             </kbd>
@@ -177,14 +175,6 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
           <div className="ml-auto flex items-center gap-2">
             <PrivacyBadge className="hidden md:inline-flex" />
-            <Link
-              href="/download"
-              title="Download the Android app"
-              className="inline-flex h-9 items-center gap-1.5 rounded-md border border-border bg-card px-2.5 text-xs font-medium text-foreground transition-colors hover:bg-muted sm:px-3"
-            >
-              <Smartphone className="h-4 w-4 shrink-0" aria-hidden />
-              <span className="hidden sm:inline">Get the app</span>
-            </Link>
             <ThemeToggle />
           </div>
         </header>

@@ -4,7 +4,7 @@ import { ImagesToPdfClient } from "../_shared/images-to-pdf-client";
 import content from "./content";
 
 export const metadata: Metadata = {
-  title: "JPG to PDF",
+  title: "在线图片转 PDF 工具 | 轻盒工具箱",
   description:
     "Combine JPG photos into a single multi-page PDF. Runs 100% in your browser — no uploads.",
 };

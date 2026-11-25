@@ -20,8 +20,8 @@ export function TextTransformTool({
   transform,
   watch = [],
   controls,
-  inputLabel = "Input",
-  outputLabel = "Output",
+  inputLabel = "输入",
+  outputLabel = "输出",
   inputPlaceholder = "Paste or type here…",
   emptyOutput = "",
   download,
@@ -69,7 +69,7 @@ export function TextTransformTool({
       .catch((e) => {
         if (cancelled) return;
         setOutput("");
-        setError(e instanceof Error ? e.message : "Could not process this input.");
+        setError(e instanceof Error ? e.message : "无法处理此输入。");
       });
     return () => {
       cancelled = true;
@@ -85,7 +85,7 @@ export function TextTransformTool({
   return (
     <div className="space-y-4">
       {controls && (
-        <Panel title="Options" bodyClassName="p-4">
+        <Panel title="选项" bodyClassName="p-4">
           {controls}
         </Panel>
       )}

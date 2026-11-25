@@ -30,11 +30,11 @@ function headlineSize(name: string): number {
 export function toolOgImage(slug: string): ImageResponse {
   const tool = getTool(slug);
 
-  // Fall back to generic FreeTools copy rather than throwing — a throw here
+  // 回退到通用中文文案，避免抛出异常
   // would fail the build for the whole route.
-  const name = tool?.name ?? "FreeTools";
+  const name = tool?.name ?? "轻盒工具箱";
   const description =
-    tool?.description ?? "Free, private, in-browser tools. Nothing ever leaves your device.";
+    tool?.description ?? "免费、私密、浏览器本地运行的在线工具，文件绝不离开你的设备。";
   const category = tool?.category ?? "Free online tools";
 
   return new ImageResponse(
@@ -80,7 +80,7 @@ export function toolOgImage(slug: string): ImageResponse {
               <path d={WRENCH} />
             </svg>
           </div>
-          <div style={{ fontSize: 40, fontWeight: 700, letterSpacing: -1 }}>FreeTools</div>
+          <div style={{ fontSize: 40, fontWeight: 700, letterSpacing: -1 }}>LiteBox</div>
         </div>
 
         {/* Body: category pill, tool name, description */}
@@ -136,9 +136,9 @@ export function toolOgImage(slug: string): ImageResponse {
             color: "#6b7280",
           }}
         >
-          <div style={{ color: "#eab308", fontWeight: 600 }}>freetools.click</div>
+          <div style={{ color: "#eab308", fontWeight: 600 }}>liteboxtools.com</div>
           <div>·</div>
-          <div>Runs 100% in your browser — no uploads</div>
+          <div>100% 浏览器本地运行 — 无需上传</div>
         </div>
       </div>
     ),

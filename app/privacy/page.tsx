@@ -3,245 +3,102 @@ import { LegalPage } from "@/components/legal/legal-page";
 import { LIVE_TOOL_COUNT } from "@/lib/tools-registry";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "隐私政策 - 轻盒工具箱",
   description:
-    "How FreeTools handles your data: your files are processed entirely in your browser and are never uploaded.",
+    "轻盒工具箱如何处理数据：所有文件都在你的浏览器中本地处理，绝不上传；同时说明 Google Analytics 与 Google AdSense Cookie 的使用。",
 };
 
 export default function Page() {
   return (
     <LegalPage
-      title="Privacy Policy"
-      lastUpdated="14 July 2026"
-      intro="FreeTools is built so that your files never leave your device. This policy explains the very little data we do handle, and why."
+      title="隐私政策"
+      lastUpdated="2026 年 11 月 25 日"
+      intro="轻盒工具箱的设计原则是：你的文件永远不离开你的设备。本政策说明我们处理哪些极有限的数据，以及为什么。"
     >
-      <h2>1. Who we are</h2>
+      <h2>一、我们是谁</h2>
       <p>
-        FreeTools is operated by <strong>FirstLink AI</strong> (&ldquo;FreeTools&rdquo;,
-        &ldquo;we&rdquo;, &ldquo;us&rdquo;), based in the Republic of the Philippines. This policy
-        covers the website at{" "}
-        <a href="https://www.freetools.click">https://www.freetools.click</a> and all of the tools
-        on it.
-      </p>
-      <p>
-        We are the personal information controller for the limited data described below. Our
-        processing is governed by the Philippine <strong>Data Privacy Act of 2012 (Republic Act No.
-        10173)</strong> and its Implementing Rules and Regulations, overseen by the{" "}
-        <strong>National Privacy Commission (NPC)</strong>. Because the site is reachable worldwide,
-        section 12 summarises equivalent rights for visitors in the EU/UK and California.
-      </p>
-      <p>
-        Privacy questions or requests: <a href="mailto:privacy@freetools.click">privacy@freetools.click</a>.
+        轻盒工具箱（英文名 LiteBox，以下简称「我们」）运营网站{" "}
+        <a href="https://liteboxtools.com">https://liteboxtools.com</a> 及其上的全部工具。
+        隐私相关问题或请求，请发送邮件至{" "}
+        <a href="mailto:contact@liteboxtools.com">contact@liteboxtools.com</a>。
       </p>
 
-      <h2>2. Your files never leave your device</h2>
-      <p>This is the most important thing on this page, so it goes first.</p>
+      <h2>二、你的文件永不离开设备</h2>
+      <p>这是本页最重要的一条，因此放在最前面。</p>
       <p>
-        All {LIVE_TOOL_COUNT} tools on FreeTools run <strong>100% inside your own browser</strong>, using
-        WebAssembly, HTML5 Canvas, and the Web Audio API. Your videos, audio, PDFs, images,
-        documents, and text are opened, processed, and downloaded entirely on your own device.
+        本站全部 {LIVE_TOOL_COUNT} 款工具都 <strong>100% 在你的浏览器内运行</strong>，
+        使用 WebAssembly、HTML5 Canvas 与 Web Audio API 等技术。你上传的视频、音频、PDF、
+        图片、文档和文字，全部在你自己的设备上打开、处理并下载。
+      </p>
+      <ul>
+        <li>你的文件<strong>绝不会被上传、传输、接收、查看、存储</strong>，我们也无法访问。</li>
+        <li>我们不运行接收文件的服务器。<strong>本站没有文件上传接口。</strong></li>
+        <li>因此我们<strong>无法</strong>访问、恢复或删除你的文件——因为我们从未拥有过它们。你始终保有完全控制权。</li>
+      </ul>
+      <p>
+        你可以自行验证：打开浏览器的开发者工具，切到 Network（网络）标签，然后运行任意工具。
+        你不会看到你的文件被发送到任何地方。首次使用视频工具时浏览器会从公共组件源下载约 31 MB 的
+        FFmpeg 引擎，这是唯一的网络请求，且不包含你的任何文件。
+      </p>
+
+      <h2>三、Cookie 与第三方服务</h2>
+      <p>
+        为了满足网站运营与广告投放的需要，本站使用以下第三方服务。它们可能在你访问时设置 Cookie
+        或使用类似技术：
       </p>
       <ul>
         <li>
-          Your files are <strong>never uploaded, transmitted, received, seen, stored, or accessible
-          to us</strong>.
+          <strong>Google Analytics（谷歌分析）</strong>：用于统计访问量与使用趋势，了解哪些工具更受欢迎。
+          我们启用了 IP 匿名化，并尽可能减少数据留存。Google Analytics 可能使用 Cookie 区分匿名访客。
         </li>
         <li>
-          We do not operate a server that receives files. <strong>There is no upload endpoint.</strong>
+          <strong>Google AdSense</strong>：用于在页面展示广告、衡量广告效果并向你提供相关广告。
+          AdSense 及其合作伙伴可能使用 Cookie 或设备标识符来投放和个性化广告。
         </li>
         <li>
-          It follows that we <strong>cannot</strong> access, recover, or delete your files &mdash;
-          because we never had them. You keep full control of them at all times.
+          <strong>Vercel Analytics</strong>：用于无 Cookie 的匿名流量统计，不跨站追踪访客。
         </li>
       </ul>
       <p>
-        A practical way to check this yourself: open your browser&rsquo;s developer tools, switch to
-        the Network tab, and run any tool. You will not see your file being sent anywhere.
+        上述 Cookie 与你的本地文件处理完全无关——它们只用于统计与广告，不会读取你放入工具的文件内容。
       </p>
 
-      <h2>3. Analytics (cookieless)</h2>
+      <h2>四、如何管理 Cookie 与广告偏好</h2>
       <p>
-        We use <strong>Vercel Web Analytics</strong> to understand roughly how many people use the
-        site and which tools are useful. It is <strong>cookieless</strong>, does not track you across
-        other websites, and does not build advertising profiles.
+        你可以通过浏览器设置删除或阻止 Cookie，也可以访问{" "}
+        <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">
+          Google 广告设置
+        </a>{" "}
+        管理个性化广告偏好，或通过浏览器安装广告拦截扩展。禁用 Cookie 不会影响工具本身的使用——
+        所有工具仍然可以正常工作。
       </p>
-      <p>It records aggregate, non-identifying information such as:</p>
-      <ul>
-        <li>the page paths visited;</li>
-        <li>the referring site, if any;</li>
-        <li>an approximate country;</li>
-        <li>device and browser type.</li>
-      </ul>
       <p>
-        It does not store raw IP addresses and does not set cookies. We do{" "}
-        <strong>not</strong> use Google Analytics, advertising cookies, ad networks, or cross-site
-        trackers.
+        欧洲经济区、英国及加州访客可依据当地法规（GDPR、CCPA 等）行使访问、删除、反对处理等权利。
+        如需行使相关权利，请通过上面的邮箱联系我们；涉及 Google 服务收集的数据，也可直接向 Google 提出请求。
       </p>
 
-      <h2>4. Cookies and local storage</h2>
+      <h2>五、我们存储什么</h2>
       <p>
-        <strong>We set no cookies at all.</strong> There is no cookie banner because there is nothing
-        to consent to.
-      </p>
-      <p>
-        Some tools do save preferences in your browser&rsquo;s <strong>localStorage</strong>, which
-        is not a cookie and never leaves your device &mdash; it is not sent to us with requests:
-      </p>
-      <ul>
-        <li>your light/dark theme preference;</li>
-        <li>flashcard decks you create in Flashcard Studio;</li>
-        <li>your saved business and invoice details in the Invoice Generator;</li>
-        <li>
-          an email address, if you type one into a &ldquo;notify me&rdquo; box on a Coming Soon tool
-          &mdash; this is stored <strong>only in your own browser</strong> and is not transmitted to
-          us or to anyone else.
-        </li>
-      </ul>
-      <p>
-        You can erase all of it at any time using your browser&rsquo;s &ldquo;clear site data&rdquo;
-        or privacy settings. We have no way to read it and no copy of it.
+        我们不在服务器上存储你的文件，也不要求你注册账号，因此不会保存你的姓名、邮箱或文件副本。
+        你的浏览器可能会在本地缓存中保存已下载的 FFmpeg 引擎以提升速度，这些数据仅存在于你的设备上，
+        可随时通过清除浏览器缓存删除。
       </p>
 
-      <h2>5. Hosting and server logs</h2>
+      <h2>六、儿童隐私</h2>
       <p>
-        The site is hosted on <strong>Vercel</strong> (Vercel Inc., USA), which acts as our
-        processor. Like any web host, Vercel automatically records standard technical request logs:
-        IP address, user-agent, timestamp, and the URL requested. These exist for security,
-        abuse-prevention, and reliability. They are ordinary web-server logs and we do not use them
-        to identify individuals or link visits together.
+        本站不面向 13 岁以下的儿童，也不会有意收集儿童个人信息。如果你发现儿童向我们提供了个人信息，
+        请通过上述邮箱联系我们，我们会及时处理。
       </p>
 
-      <h2>6. Third-party CDN for video and audio tools</h2>
+      <h2>七、政策更新</h2>
       <p>
-        We want to be precise about this rather than claim a perfect record. When you use a{" "}
-        <strong>video or audio tool</strong>, your browser downloads the FFmpeg WebAssembly engine
-        (roughly 31 MB) from the public CDN <strong>unpkg.com</strong>.
-      </p>
-      <p>
-        As with any resource a browser loads from another host, that request necessarily reveals your{" "}
-        <strong>IP address and user-agent</strong> to unpkg and its CDN provider, and is subject to
-        their own practices. To be clear about the direction of travel:{" "}
-        <strong>your media file is never sent anywhere</strong> &mdash; only the engine is downloaded
-        to you, and the processing then happens locally.
+        我们可能随业务发展更新本政策。更新后的版本会公布在本页并标注新的更新日期。继续使用本站即表示你接受更新后的政策。
       </p>
 
-      <h2>7. What we do not do</h2>
-      <ul>
-        <li>No accounts, no sign-up, no passwords.</li>
-        <li>No payment processing &mdash; the site is free.</li>
-        <li>No advertising and no ad networks.</li>
-        <li>No selling, renting, or sharing of personal information.</li>
-        <li>No profiling and no automated decision-making.</li>
-        <li>No marketing emails &mdash; we have no mailing list.</li>
-      </ul>
-
-      <h2>8. International transfers</h2>
+      <h2>八、联系我们</h2>
       <p>
-        Our hosting and CDN providers are located outside the Philippines, primarily in the United
-        States. This means the limited technical data described above &mdash; essentially request
-        logs and aggregate analytics &mdash; is processed abroad by those providers under their own
-        contractual and technical safeguards. No files and no accounts are involved, because neither
-        exists.
-      </p>
-
-      <h2>9. Why we may process this data</h2>
-      <p>
-        Under RA 10173, the minimal technical data above is processed because it is necessary for the
-        legitimate interests we pursue in operating a secure, reliable website and understanding
-        aggregate usage &mdash; interests that do not override your fundamental rights and freedoms,
-        given how little data is involved. For readers in the EU/UK, the equivalent legal basis is{" "}
-        <strong>legitimate interests</strong> (Article 6(1)(f) GDPR).
-      </p>
-
-      <h2>10. Retention</h2>
-      <ul>
-        <li>
-          <strong>Your files:</strong> we hold none, so there is nothing to retain or delete.
-        </li>
-        <li>
-          <strong>Aggregate analytics:</strong> retained by Vercel in line with their retention
-          policy for the product.
-        </li>
-        <li>
-          <strong>Server logs:</strong> short-lived, kept only as long as useful for security and
-          reliability.
-        </li>
-        <li>
-          <strong>localStorage:</strong> stays on your device until you clear it. Only you can remove
-          it.
-        </li>
-      </ul>
-
-      <h2>11. Children</h2>
-      <p>
-        FreeTools is a general-audience service and is not directed at children. We do not knowingly
-        collect data from children &mdash; in practice we collect no identifying data from anyone.
-      </p>
-
-      <h2>12. Your rights</h2>
-      <h3>Under the Data Privacy Act of 2012 (Philippines)</h3>
-      <p>You have the right to:</p>
-      <ul>
-        <li>be informed about how your personal data is processed;</li>
-        <li>object to processing;</li>
-        <li>access your personal data;</li>
-        <li>have inaccurate data rectified;</li>
-        <li>have data erased or blocked;</li>
-        <li>claim damages for unlawful processing;</li>
-        <li>data portability;</li>
-        <li>
-          lodge a complaint with the <strong>National Privacy Commission</strong>.
-        </li>
-      </ul>
-
-      <h3>If you are in the EU or UK</h3>
-      <p>
-        Under the GDPR and UK GDPR you have equivalent rights of access, rectification, erasure,
-        restriction of processing, objection, and data portability, and you may lodge a complaint
-        with your local supervisory authority (in the UK, the Information Commissioner&rsquo;s
-        Office).
-      </p>
-
-      <h3>If you are in California</h3>
-      <p>
-        Under the CCPA/CPRA you have the right to know what personal information is collected and the
-        right to request its deletion. <strong>We do not sell or share personal information</strong>{" "}
-        as those terms are defined by California law, and we never have.
-      </p>
-
-      <h3>How to exercise them</h3>
-      <p>
-        Email <a href="mailto:privacy@freetools.click">privacy@freetools.click</a>. Please note the
-        honest reality: because we hold almost no personal data and no user files, most requests will
-        be answered by confirming that we hold nothing about you. Where the data you are asking about
-        lives in your own browser&rsquo;s localStorage, you can delete it yourself immediately by
-        clearing site data &mdash; we have no copy to delete.
-      </p>
-
-      <h2>13. Security</h2>
-      <p>
-        Processing everything locally is itself our primary safeguard: data that is never transmitted
-        cannot be intercepted, leaked from a server, or exposed in a breach of ours. The site is
-        served over HTTPS, so the pages and tool code you download are delivered over an encrypted
-        connection.
-      </p>
-
-      <h2>14. Changes to this policy</h2>
-      <p>
-        If we change how the site handles data, we will update this page and revise the{" "}
-        <strong>Last updated</strong> date at the top. Material changes will be reflected in the text
-        itself rather than buried &mdash; if we ever start collecting something new, it will be
-        written here plainly.
-      </p>
-
-      <h2>15. Contact</h2>
-      <p>
-        FreeTools is operated by <strong>FirstLink AI</strong>. For any privacy question, request, or
-        concern, email <a href="mailto:privacy@freetools.click">privacy@freetools.click</a> and we
-        will respond.
-      </p>
-      <p>
-        This policy describes our actual practices in plain English. It is not legal advice.
+        对本政策有任何疑问，请发送邮件至{" "}
+        <a href="mailto:contact@liteboxtools.com">contact@liteboxtools.com</a>。
       </p>
     </LegalPage>
   );

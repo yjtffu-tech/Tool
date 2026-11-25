@@ -4,7 +4,7 @@ import { ImageCropperClient } from "./image-cropper-client";
 import content from "./content";
 
 export const metadata: Metadata = {
-  title: "Image Cropper",
+  title: "在线图片裁剪工具 | 轻盒工具箱",
   description:
     "Crop an image to any region or aspect ratio, right in your browser.",
 };

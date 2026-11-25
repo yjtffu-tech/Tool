@@ -149,9 +149,9 @@ export function SplitPdfClient() {
         setLoading(false);
         setRenderingPage(null);
         setLoadError(
-          name === "PasswordException"
-            ? "This PDF is password protected. Remove the password and try again."
-            : "Could not read this file. It may be corrupted or not a valid PDF.",
+          name === "密码异常"
+            ? "此 PDF 受密码保护，请先解除密码再试。"
+            : "无法读取该文件，它可能已损坏或不是有效的 PDF。",
         );
       }
     },
@@ -201,7 +201,7 @@ export function SplitPdfClient() {
 
     try {
       const { PDFDocument } = await import("pdf-lib");
-      setExtractStatus("Reading PDF");
+      setExtractStatus("读取 PDF 中");
       // pdf-lib gets its own copy of the bytes as well.
       const src = await PDFDocument.load(buffer.slice(0));
       const indices = Array.from(selected).sort((a, b) => a - b);
@@ -209,7 +209,7 @@ export function SplitPdfClient() {
         (fileName ?? "document").replace(/\.pdf$/i, "") || "document";
 
       if (mode === "single") {
-        setExtractStatus("Building PDF");
+        setExtractStatus("生成 PDF 中");
         const out = await PDFDocument.create();
         const pages = await out.copyPages(src, indices);
         for (const page of pages) out.addPage(page);
@@ -239,7 +239,7 @@ export function SplitPdfClient() {
       }
     } catch {
       setExtractError(
-        "Extraction failed. The PDF may be encrypted or corrupted.",
+        "提取失败，PDF 可能已加密或损坏。",
       );
     } finally {
       setExtracting(false);
@@ -254,7 +254,7 @@ export function SplitPdfClient() {
         <FileDropzone
           accept="application/pdf,.pdf"
           onFiles={(files) => void loadFile(files[0])}
-          hint="PDF only. Pages appear as thumbnails you can pick from."
+          hint="仅支持 PDF，页面会以缩略图形式显示供你勾选。"
         />
       </Panel>
     );
@@ -275,7 +275,7 @@ export function SplitPdfClient() {
           </p>
           <p className="text-xs text-muted-foreground">
             {loading
-              ? "Reading file"
+              ? "读取文件中"
               : `${pageCount} page${pageCount === 1 ? "" : "s"}`}
             {" · "}
             {formatBytes(fileSize)}
@@ -302,7 +302,7 @@ export function SplitPdfClient() {
       {!loadError && !loading && pageCount > 0 && (
         <>
           {/* Selection controls */}
-          <Panel title="Select pages" bodyClassName="flex flex-col gap-3 p-3">
+          <Panel title="选择页面" bodyClassName="flex flex-col gap-3 p-3">
             <div className="flex flex-wrap items-center gap-2">
               <Button variant="secondary" size="sm" onClick={selectAll}>
                 Select all
@@ -318,7 +318,7 @@ export function SplitPdfClient() {
               </span>
             </div>
             <div className="flex flex-col gap-1.5">
-              <Label htmlFor="page-range">Page range</Label>
+              <Label htmlFor="page-range">页码范围</Label>
               <div className="flex items-center gap-2">
                 <Input
                   id="page-range"
@@ -329,7 +329,7 @@ export function SplitPdfClient() {
                     setRangeError(null);
                   }}
                   onKeyDown={(e) => {
-                    if (e.key === "Enter") applyRange();
+                    if (e.key === "回车") applyRange();
                   }}
                   className="max-w-xs"
                 />
@@ -344,7 +344,7 @@ export function SplitPdfClient() {
           </Panel>
 
           {/* Thumbnail grid */}
-          <Panel title="Pages" bodyClassName="p-3">
+          <Panel title="页数" bodyClassName="p-3">
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
               {thumbs.map((thumb, i) => {
                 const isSelected = selected.has(i);
@@ -401,17 +401,17 @@ export function SplitPdfClient() {
           </Panel>
 
           {/* Extract controls */}
-          <Panel title="Extract" bodyClassName="flex flex-col gap-3 p-3">
+          <Panel title="提取" bodyClassName="flex flex-col gap-3 p-3">
             <div className="flex flex-col gap-1.5">
-              <Label htmlFor="extract-mode">Output</Label>
+              <Label htmlFor="extract-mode">输出</Label>
               <Select
                 id="extract-mode"
                 value={mode}
                 onChange={(e) => setMode(e.target.value as ExtractMode)}
                 className="max-w-xs"
               >
-                <option value="single">One PDF with selected pages</option>
-                <option value="each">Each selected page as its own PDF</option>
+                <option value="single">把所选页面合成一个 PDF</option>
+                <option value="each">每个所选页面单独导出为 PDF</option>
               </Select>
             </div>
             <div className="flex flex-wrap items-center gap-3">

@@ -38,7 +38,7 @@ export function ResizeVideoClient() {
   return (
     <VideoWorkbench
       hint="MP4, MOV, or WebM. Scale the video to a new resolution."
-      runLabel="Resize video"
+      runLabel="调整视频尺寸"
       outSuffix="resized"
       outExt="mp4"
       onMeta={onMeta}
@@ -53,9 +53,9 @@ export function ResizeVideoClient() {
       controls={
         <div className="space-y-3">
           <div className="max-w-xs space-y-1.5">
-            <Label htmlFor="preset">Preset</Label>
+            <Label htmlFor="preset">预设</Label>
             <Select id="preset" defaultValue="" onChange={(e) => applyPreset(e.target.value)}>
-              <option value="">Custom</option>
+              <option value="">自定义</option>
               <option value="1080p">1080p (1920×1080)</option>
               <option value="720p">720p (1280×720)</option>
               <option value="480p">480p (854×480)</option>
@@ -63,11 +63,11 @@ export function ResizeVideoClient() {
           </div>
           <div className="grid max-w-md grid-cols-2 gap-3">
             <div className="space-y-1.5">
-              <Label htmlFor="rs-w">Width (px)</Label>
+              <Label htmlFor="rs-w">宽度（像素）</Label>
               <Input id="rs-w" type="number" min={2} value={w} onChange={(e) => setW(Math.max(2, Number(e.target.value)))} />
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="rs-h">Height (px)</Label>
+              <Label htmlFor="rs-h">高度（像素）</Label>
               <Input id="rs-h" type="number" min={2} value={h} onChange={(e) => setH(Math.max(2, Number(e.target.value)))} />
             </div>
           </div>

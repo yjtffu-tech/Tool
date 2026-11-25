@@ -2,53 +2,44 @@ import type { ToolContent } from "@/lib/tool-content";
 
 const content: ToolContent = {
   intro:
-    "Video Converter changes a clip from one container and codec to another — MP4, MOV, MKV, or WebM — entirely in your browser. Drop in a video, pick a target format, and download the converted file. The MP4, MOV, and MKV targets use H.264 video with AAC audio, while WebM uses VP8 with Vorbis. Because it runs locally with in-browser FFmpeg (WebAssembly), your footage is never uploaded.",
+    '"视频格式转换是把一段视频从一种封装格式改写成另一种格式的过程，常见需求包括把手机拍摄的 MOV 转成兼容性更好的 MP4，把屏幕录制的 WebM 转成可在微信里直接发送的 MP4，或者把 MKV 里的素材重新封装成便于剪辑软件识别的版本。轻盒工具箱的视频格式转换器完全运行在你的浏览器内部，依靠编译成 WebAssembly 的 FFmpeg 引擎完成解码与编码。文件从选中的那一刻起就只停留在你电脑的内存里，不会经过任何服务器，也没有上传、排队和等待的环节。"',
   steps: [
     {
-      title: "Add your video",
-      body: "Drag a file onto the drop zone or click to browse. Most common formats can be read as input. The in-browser video engine loads in the background while you choose a target.",
+      title: "选择要转换的视频文件",
+      body: "点击上传区域或把视频文件直接拖进来。首次使用视频工具时，浏览器会下载约三十一兆的 FFmpeg 引擎并缓存起来，之后再打开任何视频工具都不需要重复下载。",
     },
     {
-      title: "Pick a target format",
-      body: "Choose MP4 (H.264 / AAC), MOV (H.264 / AAC), MKV (H.264 / AAC), or WebM (VP8 / Vorbis) from the Target format menu. MP4 is the safest choice for broad compatibility.",
+      title: "选择目标格式与参数",
+      body: "在目标格式里选择 MP4、WebM、MOV 或 MKV。MP4 兼容性最好，适合发微信、微博和大多数播放器；WebM 体积更小，适合网页嵌入。",
     },
     {
-      title: "Convert",
-      body: "Click Convert to run the transcode. Note that WebM (VP8) encoding is noticeably slower than the H.264 targets, so allow extra time for longer clips.",
-    },
-    {
-      title: "Preview and download",
-      body: "Play the converted clip in the built-in preview to confirm it looks right, then download it. Everything is processed on your device, so nothing is uploaded.",
+      title: "开始转换并下载结果",
+      body: "点击转换按钮，浏览器会在本地完成解码与重新编码，进度条会实时显示处理状态。完成后页面出现预览，确认画面和声音都正常，再点击下载按钮把新文件保存到本地。",
     },
   ],
   useCases: [
-    "Convert a MOV or MKV file to MP4 for wide device compatibility",
-    "Turn a clip into WebM for lighter, web-friendly playback",
-    "Repackage footage into MP4 before using another FreeTools video tool",
-    "Change an incompatible file into a format your editor or player accepts",
-    "Standardize a mix of clips to a single container and codec",
-    "Get an H.264 MP4 from a format that won't play on a target device",
+    "把手机拍摄的 MOV 视频转成 MP4，方便在 Windows 电脑上直接播放和剪辑",
+    "把屏幕录制的 WebM 转成 MP4，上传到微信视频号、抖音或企业微信",
+    "给跨境电商产品视频做格式统一，避免不同平台上传时提示格式不支持",
+    "把老设备导出的 MKV 素材转成剪辑软件更容易识别的封装格式",
+    "在不联网的电脑上处理内部培训视频，确保素材不出本机",
   ],
   faqs: [
     {
-      q: "Is Video Converter free?",
-      a: "Yes. Every FreeTools tool is completely free — no account, no watermark, and no sign-up required.",
+      q: "转换会不会把我的视频上传到服务器？",
+      a: "不会。整个转换过程都在你的浏览器里完成，FFmpeg 以 WebAssembly 形式在本机运行，视频文件不会离开你的设备，关闭页面后内存中的临时数据也会被浏览器回收。",
     },
     {
-      q: "Do you upload my video to a server?",
-      a: "No. The conversion runs entirely in your browser using WebAssembly FFmpeg, so your file never leaves your device.",
+      q: "MP4、WebM、MOV、MKV 应该选哪个？",
+      a: "日常分享和大多数播放器选 MP4 最稳妥；网页嵌入且追求体积可选 WebM；MOV 适合继续在苹果生态里剪辑；MKV 适合保存多轨字幕的高清素材。不确定时优先选 MP4。",
     },
     {
-      q: "Which output formats are available?",
-      a: "MP4, MOV, and MKV (all H.264 video with AAC audio) and WebM (VP8 video with Vorbis audio). MP4 is the most broadly compatible choice.",
+      q: "为什么第一次转换要等一会儿？",
+      a: "首次使用视频工具时浏览器需要下载约三十一兆的 FFmpeg 引擎，之后会被缓存，后续转换基本可以即时开始。这个下载只发生一次，且来自公共组件源，不包含你的任何文件。",
     },
     {
-      q: "Why is WebM conversion slower?",
-      a: "WebM uses the VP8 encoder, which is more computationally intensive than the H.264 encoder behind the MP4, MOV, and MKV targets. Longer clips will take more time.",
-    },
-    {
-      q: "Is there a file-size limit?",
-      a: "There is no fixed limit because nothing is uploaded. Processing happens on your device, so very large files use more memory and time — shorter clips convert fastest.",
+      q: "转换很慢或浏览器卡住怎么办？",
+      a: "视频编码很吃内存和处理器。建议关闭其他占资源的标签页，缩短视频时长或降低输出分辨率后再试。如果文件特别大，先用裁剪工具截取需要的片段再转换。",
     },
   ],
 };

@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 // Branded social share image, generated at build time. 1200x630 is the
 // standard Open Graph / Twitter "summary_large_image" size.
-export const alt = "FreeTools — 60 free, private, in-browser tools";
+export const alt = "轻盒工具箱 — 免费、私密、浏览器本地运行的在线工具";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -63,12 +63,12 @@ export default function OpengraphImage() {
             lineHeight: 1,
           }}
         >
-          FreeTools
+          轻盒工具箱
         </div>
 
         {/* Tagline */}
         <div style={{ fontSize: 38, color: "#9ca3af", marginTop: 26 }}>
-          60 free, private, in-browser tools
+          14 款免费工具 · 100% 本地浏览器处理
         </div>
 
         {/* Value line */}

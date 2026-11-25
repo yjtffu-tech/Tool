@@ -2,57 +2,44 @@ import type { ToolContent } from "@/lib/tool-content";
 
 const content: ToolContent = {
   intro:
-    "Compress Image Size reduces a photo's file size with a live quality slider and an optional width cap, showing the original and compressed versions side by side. As you drag the slider the image is re-encoded instantly and the new file size updates in real time, so you can trade quality for weight with your eyes on the result. It runs entirely in your browser, your image is never uploaded, and the download is a JPEG.",
+    '"图片压缩是日常办公和电商运营中最常见的图片处理需求。手机拍出来的照片动辄好几兆，直接发到微信群会被自动降质，上传到商品系统又可能触发文件大小限制。轻盒工具箱的图片压缩工具在浏览器里用 Canvas 技术重新编码图片，可以显著降低文件体积，同时让你自主控制画质。图片从选中到输出全程停留在你的设备上，不会上传到任何服务器，也不会被第三方留存。对需要处理客户合同扫描件、商品实拍图和未发布设计稿的用户来说，本地处理意味着更低的隐私风险。工具支持 JPG、PNG、WebP 等常见格式，压缩后会显示原始大小、压缩后大小和节省比例，效果一目了然。"',
   steps: [
     {
-      title: "Add your image",
-      body: "Drop a PNG, JPG, or WebP onto the drop zone. It loads immediately and the width cap defaults to the image's native width so nothing is upscaled.",
+      title: "选择要压缩的图片",
+      body: "把图片拖进上传区域或点击选择文件。支持 JPG、PNG、WebP 等常见格式，一次处理一张，便于精确控制每张图的压缩效果。",
     },
     {
-      title: "Set the target quality",
-      body: "Drag the quality slider from 10 to 100 percent. The image is re-encoded on the fly and the compressed preview and size counter update as you go.",
+      title: "调整画质与输出格式",
+      body: "拖动画质滑块观察预估体积变化。商品图和文字截图建议画质保持在八十以上，照片类素材可以降到六十到七十。必要时把 PNG 换成 WebP 能进一步减小体积。",
     },
     {
-      title: "Cap the width if needed",
-      body: "Enter a maximum width in pixels to scale the image down proportionally. The tool never upscales past the source resolution.",
-    },
-    {
-      title: "Compare side by side",
-      body: "Review the original and compressed images next to each other, along with the original size, compressed size, and the percentage of disk space saved.",
-    },
-    {
-      title: "Download the JPEG",
-      body: "Click Download compressed image to save the result as a JPEG, named after your original file with a -compressed suffix.",
+      title: "下载压缩结果",
+      body: "点击压缩按钮，本地处理完成后页面会显示压缩前后对比。点下载保存结果，再拿去上传或发送。",
     },
   ],
   useCases: [
-    "Get a photo under an email or upload size limit",
-    "Lighten large images so a web page loads faster",
-    "Resize a high-resolution photo down to a sensible width",
-    "Reduce a phone photo before sharing it in a chat",
-    "Trade a little quality for a much smaller file with instant visual feedback",
-    "Batch through several images quickly, one at a time, without any tool to install",
+    "微信发送原图太大时的压缩技巧：把画质调到七十左右，一张手机照片通常能从五兆压到几百千字节，微信里看起来依然清楚",
+    "电商商品主图批量减重，避免平台上传时被二次压缩导致细节糊掉",
+    "把扫描的合同和发票压缩后通过邮件发送，绕开邮箱附件大小限制",
+    "公众号文章配图压缩，加快页面加载速度，提升读者体验",
+    "把旅游照片压缩后存进手机相册，释放宝贵的存储空间",
   ],
   faqs: [
     {
-      q: "Is Compress Image Size free?",
-      a: "Yes. Every FreeTools tool is completely free — no account, no watermark, and no sign-up required.",
+      q: "压缩会不会让图片变模糊？",
+      a: "任何有损压缩都会有一定画质损失。建议先从画质八十开始试，预览看文字边缘和细节是否还能接受，再逐步下调。重要素材请保留原件。",
     },
     {
-      q: "Is my image uploaded to a server?",
-      a: "No. The image is re-encoded on a local canvas in your browser, so it never leaves your device.",
+      q: "PNG 和 WebP 该选哪个？",
+      a: "需要透明背景时优先 PNG 或 WebP；不需要透明通道的照片类图片用 WebP 通常比 JPG 更小，兼容性也已被主流浏览器和微信支持。",
     },
     {
-      q: "What format is the output?",
-      a: "The compressed image is always a JPEG. JPEG's lossy compression is what lets the quality slider shrink the file so effectively, which is ideal for photos.",
+      q: "为什么有的图片压缩后反而变大？",
+      a: "已经高度压缩过的小图再处理，重新编码的开销可能超过节省的空间。这类图片本身就没必要再压缩，直接保持原样即可。",
     },
     {
-      q: "Will it make my image blurry?",
-      a: "Only if you push the quality low. Because the preview updates live, you can see exactly where compression starts to show and stop at a setting that still looks good.",
-    },
-    {
-      q: "Does it enlarge small images?",
-      a: "No. The width cap defaults to the native width and the tool never upscales beyond the source resolution, so you only ever scale down.",
+      q: "会不会上传我的照片？",
+      a: "不会。压缩在浏览器内存中完成，工具没有上传接口，也没有账号系统，图片始终留在你的设备上。",
     },
   ],
 };

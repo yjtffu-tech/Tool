@@ -2,53 +2,44 @@ import type { ToolContent } from "@/lib/tool-content";
 
 const content: ToolContent = {
   intro:
-    "Trim Video lets you cut a clip down to exactly the part you need, right in your browser. Mark a start and end point on the timeline, preview the selection, and download the trimmed clip. Because the editing runs locally with in-browser FFmpeg (WebAssembly), your footage is never uploaded — it never leaves your device.",
+    '"视频裁剪指的是从一段较长的录像里截取指定时间范围的片段，是短视频制作中最常用的一步。无论是从会议录屏里挑出关键演示，还是从旅行素材里剪出 fifteen 秒的高光，裁剪都能帮你把冗长的原片变成可以直接发布的内容。轻盒工具箱的裁剪工具在浏览器本地调用 FFmpeg 引擎工作，你只需要拖动时间轴上的起止滑块，设定精确到秒的范围，工具就会在内存中完成截取并生成新文件。整个过程没有上传到服务器的步骤，原片始终留在你的设备上。"',
   steps: [
     {
-      title: "Add your video",
-      body: "Drag a file onto the drop zone or click to browse. MP4, MOV, and WebM work best. The in-browser video engine loads automatically in the background.",
+      title: "导入需要裁剪的视频",
+      body: "选择本地视频文件或拖入上传区域。工具会读取视频时长并在时间轴上显示完整长度，首次使用视频功能时需等待引擎下载并缓存。",
     },
     {
-      title: "Set the range",
-      body: "Drag the two handles on the slider — or type exact timestamps — to mark where the clip should start and end. The live preview shows your current selection.",
+      title: "拖动滑块设定起止时间",
+      body: "在时间轴上拖动起点和终点，或直接在时间输入框里填写精确的秒数。建议先把要保留的片段从头到尾看一遍，再回来微调边界，避免剪掉关键画面。",
     },
     {
-      title: "Pick a trim mode",
-      body: "Choose Fast copy for an instant, lossless cut, or Precise re-encode for a frame-exact trim that outputs MP4 (H.264).",
-    },
-    {
-      title: "Trim and download",
-      body: "Click Trim video, then download the finished clip. Everything is processed on your device, so nothing is uploaded.",
+      title: "截取并下载片段",
+      body: "点击裁剪按钮，本地引擎会按设定范围导出新视频。完成后先播放确认起止点是否准确，再把片段下载到本地用于后续剪辑或发布。",
     },
   ],
   useCases: [
-    "Cut dead air from the start and end of a recording",
-    "Clip a short highlight from a longer video to share",
-    "Shorten a screen recording before sending it to a colleague",
-    "Extract a single scene from raw footage",
-    "Prepare a clip to fit a platform's length limit",
-    "Remove a mistake or interruption from the middle of a take",
+    "从两小时的会议录屏里截出产品演示的三分钟片段，发给没参会的同事",
+    "把旅行视频里的高光时刻剪成十五秒短片，直接发朋友圈或小红书",
+    "电商直播回放中截取讲解某个单品的段落，作为商品详情页的补充素材",
+    "裁剪出课程录像里的答疑环节，单独整理成学员可反复查看的短视频",
+    "去掉视频开头的黑屏和结尾的停顿，让成片更紧凑",
   ],
   faqs: [
     {
-      q: "Is Trim Video free?",
-      a: "Yes. Every FreeTools tool is completely free — no account, no watermark, and no sign-up required.",
+      q: "裁剪会不会重新编码导致画质下降？",
+      a: "工具在本地按设定范围导出，具体是否重编码取决于所选输出格式。为了精确控制起止时间，通常需要重新编码，画质损失很轻微，肉眼基本看不出来。",
     },
     {
-      q: "Do you upload my video to a server?",
-      a: "No. Trimming runs entirely in your browser using WebAssembly FFmpeg, so your file never leaves your device. That is the whole point of FreeTools.",
+      q: "时间轴可以精确到多少？",
+      a: "可以按秒级输入起止时间，时间轴滑块适合快速粗调，输入框适合精确微调。需要帧级精度的专业剪辑建议使用桌面剪辑软件。",
     },
     {
-      q: "Which video formats can I trim?",
-      a: "MP4, MOV, and WebM are best supported. Fast-copy mode keeps the original format; precise mode re-encodes to MP4 (H.264).",
+      q: "能不能把一段视频剪成多个片段？",
+      a: "当前一次导出一个片段。你可以重复设定不同的起止时间多次导出，所有处理都在本地完成，重复操作不会产生额外费用。",
     },
     {
-      q: "Is there a file-size limit?",
-      a: "There is no fixed limit because nothing is uploaded. Processing happens on your device, so very large files simply use more memory — shorter clips are faster.",
-    },
-    {
-      q: "Why does the fast cut sometimes start slightly early?",
-      a: "Fast copy snaps the cut to the nearest keyframe to stay instant and lossless. If you need a frame-exact cut, switch to Precise re-encode.",
+      q: "很长的视频裁剪会卡吗？",
+      a: "视频时长本身不影响内存占用太多，主要取决于分辨率。如果原片是四 K 以上，建议先降低分辨率再裁剪，处理会更流畅。",
     },
   ],
 };

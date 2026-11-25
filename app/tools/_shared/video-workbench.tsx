@@ -224,14 +224,14 @@ export function VideoWorkbench({
         <div className="flex flex-wrap items-center gap-2">
           <Zap className="h-4 w-4 text-accent" aria-hidden />
           <span className="text-sm font-medium text-foreground">Video engine</span>
-          {state === "ready" && <Badge>Ready</Badge>}
+          {state === "ready" && <Badge>就绪</Badge>}
           {state === "loading" && (
             <Badge>
               <Loader2 className="h-3 w-3 animate-spin" aria-hidden />
               Downloading {loadPercent}%
             </Badge>
           )}
-          {state === "error" && <span className="text-xs text-danger">Failed to load</span>}
+          {state === "error" && <span className="text-xs text-danger">加载失败</span>}
         </div>
         {state === "loading" && (
           <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
@@ -250,7 +250,7 @@ export function VideoWorkbench({
       </Panel>
 
       {/* Preview */}
-      <Panel title="Preview" bodyClassName="p-3">
+      <Panel title="预览" bodyClassName="p-3">
         <video
           ref={videoRef}
           src={videoUrl}
@@ -291,7 +291,7 @@ export function VideoWorkbench({
 
       {/* Result */}
       {result && (
-        <Panel title="Result" bodyClassName="flex flex-col gap-3 p-3">
+        <Panel title="结果" bodyClassName="flex flex-col gap-3 p-3">
           <video src={result.url} controls playsInline className="h-auto max-h-[420px] max-w-full rounded-md border border-border bg-muted" />
           <div className="flex flex-wrap items-center gap-3">
             <Button

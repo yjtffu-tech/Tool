@@ -100,9 +100,9 @@ export function PdfToImagesClient({
         if (genRef.current !== gen) return;
         const name = (err as { name?: string } | null)?.name;
         setError(
-          name === "PasswordException"
+          name === "密码异常"
             ? "This PDF is password protected. Unlock it first."
-            : "Could not read this file. It may be corrupted or not a valid PDF.",
+            : "无法读取该文件，它可能已损坏或不是有效的 PDF。",
         );
       } finally {
         setRendering(false);
@@ -213,7 +213,7 @@ export function PdfToImagesClient({
             {pages.length === 1 ? "" : "s"}
           </Button>
 
-          <Panel title="Pages" bodyClassName="p-3">
+          <Panel title="页数" bodyClassName="p-3">
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
               {pages.map((page, i) => (
                 <div

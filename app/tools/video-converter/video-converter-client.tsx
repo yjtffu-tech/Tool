@@ -19,7 +19,7 @@ export function VideoConverterClient() {
   const spec = OUT[target];
   return (
     <VideoWorkbench
-      hint="Drop a video and pick a target container/codec."
+      hint="拖入视频后选择目标封装格式与编码。"
       runLabel={`Convert to ${target.toUpperCase()}`}
       outSuffix="converted"
       outExt={target}
@@ -27,7 +27,7 @@ export function VideoConverterClient() {
       getArgs={({ input, output }) => ["-i", input, ...spec.args, output]}
       controls={
         <div className="max-w-xs space-y-1.5">
-          <Label htmlFor="target">Target format</Label>
+          <Label htmlFor="target">目标格式</Label>
           <Select id="target" value={target} onChange={(e) => setTarget(e.target.value as Target)}>
             <option value="mp4">MP4 (H.264 / AAC)</option>
             <option value="mov">MOV (H.264 / AAC)</option>

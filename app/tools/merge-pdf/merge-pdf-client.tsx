@@ -48,7 +48,7 @@ export function MergePdfClient() {
       (f) => f.type === "application/pdf" || /\.pdf$/i.test(f.name),
     );
     if (pdfs.length === 0) {
-      setError("Those files aren't PDFs. Drop one or more .pdf files.");
+      setError("这些文件不是 PDF，请拖入一个或多个 .pdf 文件。");
       return;
     }
     setError(null);
@@ -71,7 +71,7 @@ export function MergePdfClient() {
           const doc = await PDFDocument.load(bytes, { ignoreEncryption: true });
           patch = { pageCount: doc.getPageCount() };
         } catch {
-          patch = { pageCount: 0, error: "Unreadable or encrypted PDF" };
+          patch = { pageCount: 0, error: "无法读取或已加密的 PDF" };
         }
         if (genRef.current !== gen) return;
         setItems((prev) =>
@@ -142,7 +142,7 @@ export function MergePdfClient() {
           accept="application/pdf,.pdf"
           multiple
           onFiles={addFiles}
-          hint="Select two or more PDFs. Reorder them, then merge into a single file."
+          hint="选择两份或更多 PDF，调整顺序后合并为一个文件。"
         />
         {error && (
           <p className="rounded-md border border-danger/30 bg-danger/10 px-3 py-2 text-sm text-danger">
@@ -276,7 +276,7 @@ export function MergePdfClient() {
             multiple
             onFiles={addFiles}
             className="border-border/70 px-4 py-6"
-            hint="Add more PDFs to the merge"
+            hint="添加更多要合并的 PDF"
           />
         </div>
       </Panel>

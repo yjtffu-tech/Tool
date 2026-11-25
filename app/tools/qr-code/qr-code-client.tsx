@@ -20,7 +20,7 @@ const ECC_LABELS: Record<EccLevel, string> = {
 };
 
 export function QrCodeClient() {
-  const [text, setText] = useState("https://www.freetools.click");
+  const [text, setText] = useState("https://liteboxtools.com");
   const [size, setSize] = useState(320);
   const [ecc, setEcc] = useState<EccLevel>("M");
   const [dark, setDark] = useState("#000000");
@@ -55,7 +55,7 @@ export function QrCodeClient() {
       } catch (e) {
         if (!cancelled) {
           setError(
-            e instanceof Error ? e.message : "Could not generate a QR code from that input.",
+            e instanceof Error ? e.message : "无法根据输入内容生成二维码。",
           );
         }
       }
@@ -77,7 +77,7 @@ export function QrCodeClient() {
       const blob = await (await fetch(url)).blob();
       downloadBlob(blob, "qr-code.png");
     } catch {
-      setError("Could not export the QR code as PNG.");
+      setError("无法将二维码导出为 PNG。");
     }
   };
 
@@ -92,14 +92,14 @@ export function QrCodeClient() {
       });
       downloadText(svg, "qr-code.svg", "image/svg+xml");
     } catch {
-      setError("Could not export the QR code as SVG.");
+      setError("无法将二维码导出为 SVG。");
     }
   };
 
   return (
     <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_320px]">
       <Panel
-        title="QR code"
+        title="二维码"
         actions={
           <>
             <Button
@@ -129,15 +129,15 @@ export function QrCodeClient() {
           <canvas
             ref={canvasRef}
             className="h-auto max-w-full rounded border border-border"
-            aria-label="Generated QR code preview"
+            aria-label="生成的二维码预览"
           />
         )}
       </Panel>
 
       <div className="flex flex-col gap-4">
-        <Panel title="Content">
+        <Panel title="内容">
           <div className="space-y-1.5">
-            <Label htmlFor="qr-text">Text or URL</Label>
+            <Label htmlFor="qr-text">文字或网址</Label>
             <Textarea
               id="qr-text"
               value={text}
@@ -149,11 +149,11 @@ export function QrCodeClient() {
           </div>
         </Panel>
 
-        <Panel title="Appearance">
+        <Panel title="外观">
           <div className="space-y-5">
             <div className="space-y-1.5">
               <div className="flex items-center justify-between">
-                <Label htmlFor="qr-size">Size</Label>
+                <Label htmlFor="qr-size">尺寸</Label>
                 <span className="text-xs tabular-nums text-muted-foreground">{size}px</span>
               </div>
               <Slider
@@ -167,7 +167,7 @@ export function QrCodeClient() {
             </div>
 
             <div className="space-y-1.5">
-              <Label htmlFor="qr-ecc">Error correction</Label>
+              <Label htmlFor="qr-ecc">纠错等级</Label>
               <Select
                 id="qr-ecc"
                 value={ecc}
@@ -183,7 +183,7 @@ export function QrCodeClient() {
 
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-1.5">
-                <Label htmlFor="qr-dark">Foreground</Label>
+                <Label htmlFor="qr-dark">前景色</Label>
                 <input
                   id="qr-dark"
                   type="color"
@@ -193,7 +193,7 @@ export function QrCodeClient() {
                 />
               </div>
               <div className="space-y-1.5">
-                <Label htmlFor="qr-light">Background</Label>
+                <Label htmlFor="qr-light">背景色</Label>
                 <input
                   id="qr-light"
                   type="color"

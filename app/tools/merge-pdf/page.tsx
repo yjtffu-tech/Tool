@@ -4,7 +4,7 @@ import { MergePdfClient } from "./merge-pdf-client";
 import content from "./content";
 
 export const metadata: Metadata = {
-  title: "Merge PDF",
+  title: "在线 PDF 合并工具 | 轻盒工具箱",
   description:
     "Combine multiple PDFs into one, in any order, entirely in your browser. No uploads.",
 };

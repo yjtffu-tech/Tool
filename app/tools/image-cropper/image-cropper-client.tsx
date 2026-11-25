@@ -18,7 +18,7 @@ interface Rect {
 }
 
 const ASPECTS: { label: string; value: string; ratio: number | null }[] = [
-  { label: "Free", value: "free", ratio: null },
+  { label: "自由", value: "free", ratio: null },
   { label: "1:1 (square)", value: "1:1", ratio: 1 },
   { label: "4:3", value: "4:3", ratio: 4 / 3 },
   { label: "16:9", value: "16:9", ratio: 16 / 9 },
@@ -58,7 +58,7 @@ export function ImageCropperClient() {
     const file = files[0];
     if (!file) return;
     if (!file.type.startsWith("image/")) {
-      setError("That file is not an image. Drop a PNG, JPEG, or WebP file.");
+      setError("该文件不是图片，请拖入 PNG、JPEG 或 WebP 文件。");
       return;
     }
     setError(null);
@@ -72,7 +72,7 @@ export function ImageCropperClient() {
     };
     img.onerror = () => {
       URL.revokeObjectURL(url);
-      setError("Could not decode that image file.");
+      setError("无法解析该图片文件。");
     };
     img.src = url;
   }, []);
@@ -265,7 +265,7 @@ export function ImageCropperClient() {
         <FileDropzone
           accept="image/*"
           onFiles={handleFiles}
-          hint="PNG, JPEG, or WebP. Then drag on the image to select the crop area."
+          hint="支持 PNG、JPEG 或 WebP，然后在图片上拖动选择裁剪区域。"
         />
         {error && (
           <p className="rounded-md border border-danger/30 bg-danger/10 px-3 py-2 text-sm text-danger">
@@ -279,7 +279,7 @@ export function ImageCropperClient() {
   return (
     <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_300px]">
       <Panel
-        title="Canvas"
+        title="画布"
         actions={
           <Button variant="ghost" size="sm" onClick={reset}>
             <RotateCcw className="h-3.5 w-3.5" aria-hidden />
@@ -298,16 +298,16 @@ export function ImageCropperClient() {
             onPointerMove={onPointerMove}
             onPointerUp={onPointerUp}
             onPointerCancel={onPointerUp}
-            aria-label="Drag to select the crop area"
+            aria-label="拖动鼠标选择裁剪区域"
           />
         </div>
       </Panel>
 
       <div className="flex flex-col gap-4">
-        <Panel title="Crop area">
+        <Panel title="裁剪区域">
           <div className="space-y-4">
             <div className="space-y-1.5">
-              <Label htmlFor="aspect">Aspect ratio</Label>
+              <Label htmlFor="aspect">宽高比</Label>
               <Select
                 id="aspect"
                 value={aspect}
@@ -326,8 +326,8 @@ export function ImageCropperClient() {
                 [
                   ["x", "X"],
                   ["y", "Y"],
-                  ["w", "Width"],
-                  ["h", "Height"],
+                  ["w", "宽度"],
+                  ["h", "高度"],
                 ] as const
               ).map(([k, label]) => (
                 <div key={k} className="space-y-1.5">
@@ -364,13 +364,13 @@ export function ImageCropperClient() {
                   from ({crop.x}, {crop.y}).
                 </>
               ) : (
-                "Drag a box on the image, or type exact values above."
+                "在图片上拖动选框，或在上方输入精确数值。"
               )}
             </p>
           </div>
         </Panel>
 
-        <Panel title="Export">
+        <Panel title="导出">
           <div className="space-y-2">
             <Button
               className="w-full"

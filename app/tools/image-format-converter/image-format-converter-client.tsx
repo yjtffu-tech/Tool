@@ -28,7 +28,7 @@ function formatLabel(mime: string): string {
     "image/svg+xml": "SVG",
     "image/avif": "AVIF",
   };
-  return map[mime] ?? (mime.split("/")[1]?.toUpperCase() || "Image");
+  return map[mime] ?? (mime.split("/")[1]?.toUpperCase() || "图片");
 }
 
 interface Source {
@@ -65,7 +65,7 @@ export function ImageFormatConverterClient() {
     const f = files[0];
     if (!f) return;
     if (!f.type.startsWith("image/")) {
-      setError("That file isn't an image. Drop a PNG, JPG, or WebP file.");
+      setError("该文件不是图片，请拖入 PNG、JPG 或 WebP 文件。");
       return;
     }
     setError(null);
@@ -81,7 +81,7 @@ export function ImageFormatConverterClient() {
     };
     img.onerror = () => {
       URL.revokeObjectURL(url);
-      setError("Could not decode that image file.");
+      setError("无法解析该图片文件。");
     };
     img.src = url;
   }, []);
@@ -100,7 +100,7 @@ export function ImageFormatConverterClient() {
     const ctx = canvas.getContext("2d");
     if (!ctx) {
       setBusy(false);
-      setError("Canvas is unavailable in this browser.");
+      setError("当前浏览器不支持 Canvas。");
       return;
     }
     // JPEG has no alpha channel — paint a white matte so transparent areas
@@ -117,7 +117,7 @@ export function ImageFormatConverterClient() {
         setBusy(false);
         if (!blob) {
           setError(
-            "This browser couldn't encode that format. Try PNG or JPEG instead.",
+            "当前浏览器无法编码该格式，请改用 PNG 或 JPEG。",
           );
           setConverted(null);
           return;
@@ -160,7 +160,7 @@ export function ImageFormatConverterClient() {
         <FileDropzone
           accept="image/*"
           onFiles={handleFiles}
-          hint="Drop an image, then pick a target format: PNG, JPEG, or WebP."
+          hint="拖入图片，然后选择目标格式：PNG、JPEG 或 WebP。"
         />
         {error && (
           <p className="rounded-md border border-danger/30 bg-danger/10 px-3 py-2 text-sm text-danger">
@@ -181,7 +181,7 @@ export function ImageFormatConverterClient() {
     <div className="space-y-4">
       {/* Format pickers */}
       <Panel
-        title="Conversion"
+        title="转换"
         actions={
           <Button variant="ghost" size="sm" onClick={reset}>
             <RotateCcw className="h-3.5 w-3.5" aria-hidden />
@@ -192,7 +192,7 @@ export function ImageFormatConverterClient() {
       >
         <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-end">
           <div className="flex-1 space-y-1.5">
-            <Label htmlFor="source-format">Source format</Label>
+            <Label htmlFor="source-format">源格式</Label>
             <Select id="source-format" value={source.mime} disabled>
               <option value={source.mime}>{formatLabel(source.mime)}</option>
             </Select>
@@ -201,7 +201,7 @@ export function ImageFormatConverterClient() {
             <ArrowRight className="h-5 w-5" aria-hidden />
           </span>
           <div className="flex-1 space-y-1.5">
-            <Label htmlFor="target-format">Target format</Label>
+            <Label htmlFor="target-format">目标格式</Label>
             <Select
               id="target-format"
               value={target}

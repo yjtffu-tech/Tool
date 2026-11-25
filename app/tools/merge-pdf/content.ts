@@ -2,53 +2,43 @@ import type { ToolContent } from "@/lib/tool-content";
 
 const content: ToolContent = {
   intro:
-    "Merge PDF combines two or more PDFs into a single document in whatever order you choose. Add your files, drag them into place or nudge them up and down, then merge — all in your browser with pdf-lib, so nothing is ever uploaded. Page counts and total size are shown as you build the list.",
+    "PDF 合并是把多份独立的 PDF 文档按顺序拼接成一个文件，是办公和跨境业务里最常见的文档操作之一。轻盒工具箱的 PDF 合并工具完全在浏览器本地运行，依靠 pdf-lib 引擎在内存中重组文档结构。你选中的每一份文件都只停留在自己的设备上，不会上传到任何服务器，也不需要注册账号。这一点对处理合同、报关单、发票和内部报表的用户尤其重要：文件不出本机，就不必担心商业资料在传输或存储环节泄露。工具支持拖拽调整顺序，合并后的文档会保留原有页面内容与质量，不会二次压缩。你可以反复尝试不同的排列，直到顺序满意再下载成品。",
   steps: [
     {
-      title: "Add two or more PDFs",
-      body: "Drop your files onto the drop zone or click to browse. Each one appears in a list with its page count and size; unreadable or encrypted files are flagged so you can remove them.",
+      title: "选择多份 PDF 文件",
+      body: "点击上传区域一次选中多份 PDF，或逐个拖入。工具会显示每份文件的页数和大小，方便你核对有没有漏选。",
     },
     {
-      title: "Put them in order",
-      body: "Drag a file by its handle to reposition it, or use the up and down arrows. The numbered badges show the exact order the pages will appear in the merged file.",
+      title: "调整合并顺序",
+      body: "用拖拽把文件排成想要的先后顺序。跨境报关材料通常按发票、装箱单、合同的顺序排列，排错了会直接影响审核效率。",
     },
     {
-      title: "Add more or remove files",
-      body: "Use the smaller drop zone at the bottom of the list to add more PDFs at any time, and click the X on any file to take it out of the merge.",
-    },
-    {
-      title: "Merge and download",
-      body: "Once at least two valid PDFs are listed, click Merge. The combined PDF is assembled in memory and downloads as merged.pdf — no upload, no watermark.",
+      title: "合并并下载",
+      body: "点击合并按钮，本地引擎会在内存中拼接文档。完成后下载单个 PDF，打开确认页数和顺序都正确再发送。",
     },
   ],
   useCases: [
-    "Combine separate chapters into one finished document",
-    "Join scanned pages that came in as individual files",
-    "Bundle an invoice, receipt, and cover letter into a single PDF",
-    "Assemble a portfolio from several exported files",
-    "Merge signed pages back into the original contract",
-    "Stitch together handouts before printing or sharing",
+    "跨境电商发票与报关单 PDF 合并与减重技巧：先合并同类单据再统一压缩，能显著减小邮件附件体积，也方便客户一次性查阅",
+    "把分散在多个文件里的合同附件合并成一份完整文档，便于归档和电子签章",
+    "把扫描的身份证、学历证明等材料合成单个 PDF，上传到需要单文件的系统",
+    "把每周的会议纪要合并成月度汇编，发给团队成员统一阅读",
   ],
   faqs: [
     {
-      q: "Is Merge PDF free?",
-      a: "Yes. Every FreeTools tool is completely free — no account, no watermark, and no sign-up required.",
+      q: "合并后会损失 PDF 质量吗？",
+      a: "不会。工具在内存中重组文档结构，不会重新压缩页面内容，文字、图片和矢量元素都保持原样。",
     },
     {
-      q: "Are my PDFs uploaded anywhere?",
-      a: "No. All merging happens locally in your browser with pdf-lib, so your files never leave your device.",
+      q: "文件会被上传到服务器吗？",
+      a: "不会。合并完全在浏览器本地完成，工具没有上传接口，也没有账号系统，文件始终留在你的设备上。",
     },
     {
-      q: "How many PDFs can I merge at once?",
-      a: "You need at least two, and there's no fixed upper limit. Because everything runs on your device, very large sets simply use more memory.",
+      q: "可以合并多少份文件？",
+      a: "没有硬性数量限制，实际取决于你电脑的内存。几十份常规文档通常都能顺利处理，超大文件建议分批合并。",
     },
     {
-      q: "Can I control the order of the pages?",
-      a: "Yes. Drag files to reorder them or use the up and down arrows. The merged PDF follows the order shown in the list, top to bottom.",
-    },
-    {
-      q: "Why is one of my files flagged as unreadable?",
-      a: "That file couldn't be parsed as a PDF, often because it's password-protected or corrupted. Remove it — or unlock it first — and the merge will proceed with the rest.",
+      q: "合并顺序错了怎么办？",
+      a: "在下载前用拖拽重新排序再合并一次即可。原文件不会被改动，你可以反复尝试不同顺序。",
     },
   ],
 };

@@ -2,53 +2,44 @@ import type { ToolContent } from "@/lib/tool-content";
 
 const content: ToolContent = {
   intro:
-    "EXIF Remover strips the hidden metadata that cameras and phones bake into your photos — GPS coordinates, the exact date and time, the camera or phone model, and its serial number. It works by decoding the image and re-encoding only the visible pixels onto a fresh canvas, which leaves every metadata tag behind. Because it all runs in your browser, the photo is never uploaded, so cleaning it up is genuinely private.",
+    '"EXIF 是照片文件里附带的一组元数据，通常包含拍摄时间、相机型号、镜头参数，甚至精确的全球定位坐标。很多人把手机原图直接发到群里或传到网上，等于顺手把自家住址、常去地点和设备信息一起交了出去。轻盒工具箱的清除照片隐私信息工具在浏览器本地重新编码图片，把这类元数据彻底剥离，只保留 pixels 本身。图片不会上传到任何服务器，清除过程完全在你自己的设备上完成，适合处理房产照片、孩子照片、门店实拍和含有位置信息的办公文件。清除后你仍然可以得到一张画面完全一致的普通图片，直接用于微信、微博、公众号或电商详情页，不必担心别人从文件属性里读出敏感信息。"',
   steps: [
     {
-      title: "Add your photo",
-      body: "Drag a JPEG, PNG, or WebP onto the drop zone, or click to browse. The image is decoded locally so its pixels can be re-encoded without the metadata.",
+      title: "导入要处理的照片",
+      body: "选择手机或相机拍的照片文件。工具会在本地读取图片内容，不会尝试联网查询或上传任何信息。",
     },
     {
-      title: "Choose an output format",
-      body: "PNG gives a lossless, definitively metadata-free file. JPEG keeps it a smaller photo-style file with an adjustable quality slider. Either way, no EXIF is written to the result.",
+      title: "一键清除元数据",
+      body: "点击清除按钮，浏览器会在内存中重新绘制并编码图片，把 EXIF、定位和设备型号等附加信息全部去掉。原图不会被改动。",
     },
     {
-      title: "Preview the clean image",
-      body: "The picture looks identical because only the invisible metadata is removed — the visible pixels are untouched (aside from optional JPEG compression you control).",
-    },
-    {
-      title: "Download the stripped image",
-      body: "Click Download to save the cleaned photo, named after your original file with a -clean suffix. Share it knowing the location and camera details are gone.",
+      title: "下载干净的图片",
+      body: "处理完成后下载结果文件。建议用系统自带的图片属性查看器确认定位信息已经消失，再把图片用于分享或上传。",
     },
   ],
   useCases: [
-    "Remove GPS location before posting a photo publicly",
-    "Strip the camera model and serial number from an image",
-    "Clear the original capture date and time from a picture",
-    "Sanitize screenshots and photos before sharing them online",
-    "Protect your home or workplace location in a listing photo",
-    "Meet a platform or client requirement to submit metadata-free images",
+    "发朋友圈或小红书前清除定位，避免暴露家庭住址和日常出行轨迹",
+    "房产中介发布房源实拍图前清理拍摄信息，保护业主和自己的隐私",
+    "跨境电商上传仓库与商品照片前去掉设备信息，避免泄露内部工作流程",
+    "把孩子的生活照发给亲友前清理元数据，减少个人信息外泄风险",
+    "给客户交付设计稿或现场照片时去除拍摄设备信息，保持交付文件干净",
   ],
   faqs: [
     {
-      q: "Is EXIF Remover free?",
-      a: "Yes. Every FreeTools tool is completely free — no account, no watermark, and no sign-up required.",
+      q: "EXIF 里到底有哪些敏感信息？",
+      a: "常见内容包括拍摄时间、GPS 经纬度、设备品牌型号、镜头参数和软件版本。其中定位信息最值得注意，手机开启定位拍照后往往会自动写入。",
     },
     {
-      q: "Is my photo uploaded to a server?",
-      a: "No. The image is decoded onto a local canvas and re-encoded in your browser, so the photo — and its metadata — never leaves your device.",
+      q: "清除后画面会变化吗？",
+      a: "不会。工具只是去掉文件的附加信息，不改变任何像素。你看到的画面和原图完全一致。",
     },
     {
-      q: "How does it actually remove the metadata?",
-      a: "The tool draws your image onto an HTML canvas, which keeps only the raw pixels, then exports a brand-new file from that canvas. EXIF, GPS, and other metadata blocks live outside the pixel data, so they simply aren't carried over into the new file.",
+      q: "照片会被上传到服务器吗？",
+      a: "不会。整个处理在浏览器本地完成，没有上传接口，也没有账号系统，原图和结果都只留在你的设备上。",
     },
     {
-      q: "Does removing EXIF change how the photo looks?",
-      a: "No visible change with PNG, which is lossless. With JPEG, the pixels are re-compressed at the quality you choose, so very low settings can soften detail slightly. In all cases the metadata is gone.",
-    },
-    {
-      q: "Which metadata gets removed?",
-      a: "All embedded metadata is dropped, including GPS location, the capture date and time, camera and lens model, serial number, exposure settings, and orientation and software tags. You get a clean image with just the picture itself.",
+      q: "微信发图不是会自动压缩吗？还需要清除吗？",
+      a: "多数社交平台会重新处理图片并去掉部分元数据，但不保证所有字段都被清掉。发布前自己清一遍更稳妥，尤其是发给陌生人or公开发布时。",
     },
   ],
 };

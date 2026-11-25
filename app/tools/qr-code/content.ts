@@ -2,57 +2,43 @@ import type { ToolContent } from "@/lib/tool-content";
 
 const content: ToolContent = {
   intro:
-    "QR Code Generator turns any text, link, or short message into a scannable QR code you can download and use anywhere. Type your content, tune the size, error-correction level, and colours, and watch the code update live. Save it as a crisp PNG for print and screens or as an SVG that scales to any dimension without blurring. It runs entirely in your browser, so whatever you encode stays on your device.",
+    "二维码生成器是把一段文字、网址或联系方式编码成可被手机扫描的方形图案。线下门店引流、商品包装溯源、名片分享和活动报名都离不开它。轻盒工具箱的二维码生成器完全在浏览器本地运行，输入内容后即时渲染，不上传、不记录，也不要求你注册账号。对商家而言，这意味着活动链接和后台地址不会经由第三方服务转手；对个人用户而言，包含手机号或邮箱的名片二维码也可以放心生成。工具支持自定义颜色、尺寸和纠错等级，生成的图案清晰规范，可以直接下载用于印刷或屏幕展示。纠错等级越高，二维码在污损或部分遮挡时越容易识别，适合印在包装和户外物料上。",
   steps: [
     {
-      title: "Enter your content",
-      body: "Type or paste a URL, plain text, contact details, Wi-Fi credentials, or any short string into the Text or URL box. The QR code regenerates as you type.",
+      title: "输入要编码的内容",
+      body: "填入网址、文字或联系方式。链接建议写完整，包含协议头，避免部分手机识别成普通文本。",
     },
     {
-      title: "Set the size",
-      body: "Use the Size slider to choose an output resolution from 128 up to 1024 pixels. Larger sizes are better for print; smaller ones are fine for on-screen use.",
+      title: "调整样式与纠错等级",
+      body: "设置尺寸、前景色和背景色。印刷在商品包装或户外海报上时把纠错等级调高，即使图案有些磨损也能扫出来。",
     },
     {
-      title: "Pick an error-correction level",
-      body: "Choose L, M, Q, or H. Higher levels let the code still scan when part of it is damaged or covered — useful if you overlay a logo — at the cost of a denser pattern.",
-    },
-    {
-      title: "Customise the colours",
-      body: "Set the foreground and background colours to match your brand. Keep strong contrast (dark on light works best) so scanners read it reliably.",
-    },
-    {
-      title: "Download PNG or SVG",
-      body: "Click PNG for a ready-to-use raster image, or SVG for a vector file that stays sharp at any size. Both download instantly to your device.",
+      title: "下载并使用",
+      body: "确认图案清晰后下载图片。印刷前建议先用手机扫一次，确认跳转地址正确再批量制作物料。",
     },
   ],
   useCases: [
-    "Link to a website, landing page, or app download from a poster or flyer",
-    "Add a scannable menu, price list, or brochure to a printed sheet",
-    "Share Wi-Fi details or contact info without typing",
-    "Put a payment or donation link on packaging or a receipt",
-    "Add a quick link to business cards, stickers, or product labels",
-    "Drop a code into a slide deck so an audience can jump straight to a resource",
+    "把公众号文章或活动页链接做成二维码，印在门店海报和商品包装上引流",
+    "生成包含姓名、电话和邮箱的名片二维码，放在电子签名或线下传单里",
+    "为跨境电商商品生成溯源二维码，扫码后查看批次与检测信息",
+    "把 Wi-Fi 名称和密码编码成二维码，贴在办公室墙上供访客扫码连接",
   ],
   faqs: [
     {
-      q: "Is the QR Code Generator free?",
-      a: "Yes. Every FreeTools tool is completely free — no account, no watermark, and no sign-up required.",
+      q: "生成二维码需要联网上传内容吗？",
+      a: "不需要。编码完全在浏览器本地完成，输入的文字和链接不会上传到服务器。",
     },
     {
-      q: "Is my text or link sent to a server?",
-      a: "No. The QR code is generated entirely in your browser, so whatever you encode never leaves your device and is never logged.",
+      q: "纠错等级有什么用？",
+      a: "纠错等级决定图案被遮挡或污损后还能不能识别。印刷在容易磨损的包装或户外物料上建议选高档位，屏幕展示用中档就够。",
     },
     {
-      q: "Do the QR codes expire or stop working?",
-      a: "No. These are static QR codes — the content is baked directly into the pattern. They will keep scanning forever and never depend on our servers or a redirect.",
+      q: "颜色可以自定义吗？",
+      a: "可以调整前景和背景颜色。注意保持足够对比度，浅色背景配深色图案最稳妥，对比太低手机会扫不出来。",
     },
     {
-      q: "Should I download PNG or SVG?",
-      a: "Use PNG for quick use on screens or when a tool needs a raster image. Choose SVG when you need to print large or resize the code, since vector files stay perfectly sharp at any dimension.",
-    },
-    {
-      q: "Why won't my code scan?",
-      a: "The most common causes are low contrast between foreground and background, or too much content packed into a small size. Keep a dark code on a light background, raise the size, and lower the error-correction level if the pattern looks too dense.",
+      q: "二维码有有效期吗？",
+      a: "二维码本身没有有效期，能否扫码取决于里面编码的链接是否还在。链接失效时重新生成一个即可。",
     },
   ],
 };

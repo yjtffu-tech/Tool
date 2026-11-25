@@ -2,7 +2,7 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Palette matched to FirstLink AI (firstlinkai.com): brand red on near-white
+/* 轻盒工具箱配色：近白底 + 品牌红
    in light mode, brand gold on near-black in dark mode. */
 :root {
   --background: #fafafa;
