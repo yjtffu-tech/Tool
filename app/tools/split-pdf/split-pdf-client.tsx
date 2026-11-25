@@ -323,7 +323,7 @@ export function SplitPdfClient() {
                 <Input
                   id="page-range"
                   value={rangeText}
-                  placeholder="e.g. 1-3, 5, 8-10"
+                  placeholder="例如：1-3, 5, 8-10"
                   onChange={(e) => {
                     setRangeText(e.target.value);
                     setRangeError(null);

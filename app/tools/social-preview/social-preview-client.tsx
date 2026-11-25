@@ -177,7 +177,7 @@ export function SocialPreviewClient() {
               placeholder="https://example.com/页面"
             />
             <p className="text-[11px] text-muted-foreground">
-              Shown as <span className="font-mono">{domain}</span>
+              显示为 <span className="font-mono">{domain}</span>
             </p>
           </div>
 

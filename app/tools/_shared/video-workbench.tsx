@@ -223,7 +223,7 @@ export function VideoWorkbench({
       <Panel bodyClassName="flex flex-col gap-2 p-3">
         <div className="flex flex-wrap items-center gap-2">
           <Zap className="h-4 w-4 text-accent" aria-hidden />
-          <span className="text-sm font-medium text-foreground">Video engine</span>
+          <span className="text-sm font-medium text-foreground">视频引擎</span>
           {state === "ready" && <Badge>就绪</Badge>}
           {state === "loading" && (
             <Badge>
@@ -262,7 +262,7 @@ export function VideoWorkbench({
       </Panel>
 
       {/* Tool-specific controls */}
-      <Panel title="Settings" bodyClassName="p-4">
+      <Panel title="设置" bodyClassName="p-4">
         {controls}
         {note && <div className="mt-3 text-xs text-muted-foreground">{note}</div>}
       </Panel>

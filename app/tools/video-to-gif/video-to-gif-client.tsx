@@ -140,7 +140,7 @@ export function VideoToGifClient() {
         <FileDropzone
           accept="video/*"
           onFiles={pickFile}
-          hint="Drop a short video clip (MP4、WebM、MOV）。保持几秒时长可得到较小的 GIF。"
+          hint="拖入一段短视频（MP4、WebM、MOV）。保持几秒时长可得到较小的 GIF。"
         />
         {error && (
           <p className="rounded-md border border-danger/30 bg-danger/10 px-3 py-2 text-sm text-danger">

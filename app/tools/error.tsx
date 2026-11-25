@@ -21,7 +21,7 @@ export default function ToolError({
         <AlertTriangle className="h-6 w-6 text-danger" aria-hidden />
       </span>
       <div>
-        <h1 className="text-lg font-semibold">This tool hit an error</h1>
+        <h1 className="text-lg font-semibold">此工具遇到错误</h1>
         <p className="mt-1 text-sm text-muted-foreground">
           The rest of LiteBox is unaffected. You can retry this tool or head back
           to the dashboard.

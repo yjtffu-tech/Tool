@@ -154,7 +154,7 @@ export function PdfToImagesClient({
         <FileDropzone
           accept="application/pdf,.pdf"
           onFiles={(files) => void loadFile(files[0])}
-          hint={`PDF only. Every page is rendered to a ${ext.toUpperCase()} you can download.`}
+          hint={`仅支持 PDF。每一页都会被渲染成可下载的 ${ext.toUpperCase()} 图片。`}
         />
       </Panel>
     );

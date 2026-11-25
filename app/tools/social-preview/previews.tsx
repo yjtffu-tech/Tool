@@ -63,7 +63,7 @@ function MockImage({
       <div className={`${className} flex items-center justify-center bg-[#e9ebee]`}>
         <span className="flex flex-col items-center gap-1 text-[#8a8d91]">
           <ImageOff className="h-6 w-6" aria-hidden />
-          <span className="text-xs">No image</span>
+          <span className="text-xs">暂无图片</span>
         </span>
       </div>
     );

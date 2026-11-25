@@ -20,7 +20,7 @@ export function EngineStatus({
     <Panel bodyClassName="flex flex-col gap-2 p-3">
       <div className="flex flex-wrap items-center gap-2">
         <Zap className="h-4 w-4 text-accent" aria-hidden />
-        <span className="text-sm font-medium text-foreground">Video engine</span>
+        <span className="text-sm font-medium text-foreground">视频引擎</span>
         {state === "ready" && <Badge>就绪</Badge>}
         {state === "loading" && (
           <Badge>
