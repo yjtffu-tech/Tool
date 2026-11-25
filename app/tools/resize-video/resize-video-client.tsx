@@ -37,7 +37,7 @@ export function ResizeVideoClient() {
 
   return (
     <VideoWorkbench
-      hint="MP4, MOV, or WebM. Scale the video to a new resolution."
+      hint="支持 MP4、MOV 或 WebM，把视频缩放到新分辨率。"
       runLabel="调整视频尺寸"
       outSuffix="resized"
       outExt="mp4"

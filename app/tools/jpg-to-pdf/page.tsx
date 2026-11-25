@@ -14,7 +14,7 @@ export default function Page() {
     <ToolPage slug="jpg-to-pdf" content={content}>
       <ImagesToPdfClient
         accept="image/jpeg,.jpg,.jpeg"
-        hint="Drop one or more JPGs. Reorder them, then export a single PDF."
+        hint="拖入一张或多张 JPG，调整顺序后导出为单个 PDF。"
       />
     </ToolPage>
   );

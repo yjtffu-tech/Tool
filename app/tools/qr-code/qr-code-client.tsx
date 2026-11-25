@@ -13,10 +13,10 @@ import { downloadBlob, downloadText } from "@/lib/download";
 type EccLevel = "L" | "M" | "Q" | "H";
 
 const ECC_LABELS: Record<EccLevel, string> = {
-  L: "Low (~7%)",
-  M: "Medium (~15%)",
-  Q: "Quartile (~25%)",
-  H: "High (~30%)",
+  L: "低（约 7%）",
+  M: "中（约 15%）",
+  Q: "较高（约 25%）",
+  H: "高（约 30%）",
 };
 
 export function QrCodeClient() {
@@ -143,7 +143,7 @@ export function QrCodeClient() {
               value={text}
               onChange={(e) => setText(e.target.value)}
               spellCheck={false}
-              placeholder="https://example.com or any text"
+              placeholder="输入网址或任意文字"
               className="min-h-[6rem] resize-y text-sm"
             />
           </div>

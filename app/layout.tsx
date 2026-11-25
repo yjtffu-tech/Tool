@@ -14,7 +14,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://liteboxtools.com"),
   title: {
     default: TITLE,
-    template: "%s | 轻盒工具箱",
+    // 各页面 title 已自带品牌后缀，此处不再追加，避免 "A | 轻盒工具箱 | 轻盒工具箱"
+    template: "%s",
   },
   description: DESCRIPTION,
   applicationName: "轻盒工具箱",

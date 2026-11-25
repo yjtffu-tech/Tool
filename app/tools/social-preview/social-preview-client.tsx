@@ -164,7 +164,7 @@ export function SocialPreviewClient() {
               rows={4}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              placeholder="A short summary shown under the title"
+              placeholder="标题下方显示的简短描述"
             />
           </div>
 
@@ -174,7 +174,7 @@ export function SocialPreviewClient() {
               id="sp-url"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
-              placeholder="https://example.com/page"
+              placeholder="https://example.com/页面"
             />
             <p className="text-[11px] text-muted-foreground">
               Shown as <span className="font-mono">{domain}</span>
@@ -192,11 +192,11 @@ export function SocialPreviewClient() {
                 <div className="flex gap-2">
                   <Button size="sm" variant="secondary" onClick={usePlaceholder}>
                     <ImagePlus className="h-3.5 w-3.5" />
-                    Placeholder
+                    占位图
                   </Button>
                   <Button size="sm" variant="ghost" onClick={() => setImageSource(null)}>
                     <Trash2 className="h-3.5 w-3.5" />
-                    Remove
+                    移除
                   </Button>
                 </div>
               </div>
@@ -205,12 +205,12 @@ export function SocialPreviewClient() {
                 <FileDropzone
                   accept="image/*"
                   onFiles={onFiles}
-                  hint="1200 x 630 recommended"
+                  hint="推荐 1200 x 630 像素"
                   className="py-6"
                 />
                 <Button size="sm" variant="secondary" className="w-full" onClick={usePlaceholder}>
                   <ImagePlus className="h-3.5 w-3.5" />
-                  Use placeholder
+                  使用占位图
                 </Button>
               </div>
             )}
@@ -218,9 +218,7 @@ export function SocialPreviewClient() {
           </div>
 
           <p className="border-t border-border pt-3 text-[11px] leading-relaxed text-muted-foreground">
-            These previews are visual mockups rendered locally. Platforms may crop
-            or restyle cards slightly, but character limits and layouts match the
-            real renderers.
+            这些预览是本地生成的示意图。平台可能对卡片做轻微裁切或样式调整，但字数限制与排版与实际渲染一致。
           </p>
         </Panel>
 

@@ -56,11 +56,11 @@ export function FileDropzone({
         <Upload className="h-5 w-5 text-muted-foreground" aria-hidden />
       </span>
       <span className="text-sm font-medium text-foreground">
-        Drop {multiple ? "files" : "a file"} here or click to browse
+        拖入{multiple ? "多个文件" : "文件"}，或点击浏览
       </span>
       {hint && <span className="text-xs text-muted-foreground">{hint}</span>}
       <span className="text-[11px] text-muted-foreground">
-        Processed locally. Never uploaded.
+        本地处理，绝不上传。
       </span>
       <input
         ref={inputRef}

@@ -84,7 +84,7 @@ function MockFrame({ label, children }: { label: string; children: React.ReactNo
 export function GooglePreview({ data }: { data: PreviewData }) {
   const domain = parseDomain(data.url);
   return (
-    <MockFrame label="Google Search">
+    <MockFrame label="谷歌搜索">
       <div className="max-w-[600px] font-[arial,sans-serif]">
         <div className="flex items-center gap-3">
           <span className="flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full border border-[#ecedef] bg-[#f1f3f4]">
@@ -96,10 +96,10 @@ export function GooglePreview({ data }: { data: PreviewData }) {
           </div>
         </div>
         <p className="mt-1.5 truncate text-xl leading-6 text-[#1a0dab]">
-          {clip(data.title || "Untitled page", 60)}
+          {clip(data.title || "未命名页面", 60)}
         </p>
         <p className="mt-1 text-sm leading-[1.58] text-[#4d5156]">
-          {clip(data.description || "No description provided for this page.", 160)}
+          {clip(data.description || "暂无页面描述。", 160)}
         </p>
       </div>
     </MockFrame>
@@ -109,16 +109,16 @@ export function GooglePreview({ data }: { data: PreviewData }) {
 export function XPreview({ data }: { data: PreviewData }) {
   const domain = parseDomain(data.url);
   return (
-    <MockFrame label="X (Twitter)">
+    <MockFrame label="X（推特）">
       <div className="max-w-[516px] overflow-hidden rounded-2xl border border-[#cfd9de] font-[system-ui,sans-serif]">
         <MockImage image={data.image} alt="Link preview" className="aspect-[1.91/1] w-full" />
         <div className="space-y-0.5 border-t border-[#cfd9de] px-3 py-2.5">
           <p className="truncate text-[13px] leading-4 text-[#536471]">{domain}</p>
           <p className="truncate text-[15px] font-normal leading-5 text-[#0f1419]">
-            {clip(data.title || "Untitled page", 70)}
+            {clip(data.title || "未命名页面", 70)}
           </p>
           <p className="line-clamp-2 text-[13px] leading-4 text-[#536471]">
-            {clip(data.description || "No description provided.", 125)}
+            {clip(data.description || "暂无描述。", 125)}
           </p>
         </div>
       </div>
@@ -129,12 +129,12 @@ export function XPreview({ data }: { data: PreviewData }) {
 export function LinkedInPreview({ data }: { data: PreviewData }) {
   const domain = parseDomain(data.url);
   return (
-    <MockFrame label="LinkedIn">
+    <MockFrame label="领英">
       <div className="max-w-[552px] overflow-hidden rounded-[2px] border border-[#e8e8e8] bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.02)] font-[system-ui,sans-serif]">
         <MockImage image={data.image} alt="Link preview" className="aspect-[1.91/1] w-full" />
         <div className="bg-[#eef3f8] px-3 py-2.5">
           <p className="line-clamp-2 text-sm font-semibold leading-5 text-[rgba(0,0,0,0.9)]">
-            {clip(data.title || "Untitled page", 120)}
+            {clip(data.title || "未命名页面", 120)}
           </p>
           <p className="mt-1 truncate text-xs text-[rgba(0,0,0,0.6)]">{domain}</p>
         </div>
@@ -146,16 +146,16 @@ export function LinkedInPreview({ data }: { data: PreviewData }) {
 export function FacebookPreview({ data }: { data: PreviewData }) {
   const domain = parseDomain(data.url);
   return (
-    <MockFrame label="Facebook">
+    <MockFrame label="脸书">
       <div className="max-w-[524px] overflow-hidden border border-[#dddfe2] font-[helvetica,arial,sans-serif]">
         <MockImage image={data.image} alt="Link preview" className="aspect-[1.91/1] w-full" />
         <div className="border-t border-[#dddfe2] bg-[#f2f3f5] px-3 py-2.5">
           <p className="truncate text-[13px] uppercase leading-4 text-[#606770]">{domain}</p>
           <p className="mt-1 truncate text-[16px] font-semibold leading-5 text-[#1d2129]">
-            {clip(data.title || "Untitled page", 88)}
+            {clip(data.title || "未命名页面", 88)}
           </p>
           <p className="truncate text-sm leading-5 text-[#606770]">
-            {clip(data.description || "No description provided.", 110)}
+            {clip(data.description || "暂无描述。", 110)}
           </p>
         </div>
       </div>

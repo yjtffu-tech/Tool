@@ -303,7 +303,7 @@ export function TrimVideoClient() {
         <FileDropzone
           accept="video/*"
           onFiles={onFiles}
-          hint="MP4, MOV, or WebM work best. Trimming runs entirely in your browser."
+          hint="推荐 MP4、MOV 或 WebM。裁剪完全在浏览器中完成。"
         />
       </Panel>
     );

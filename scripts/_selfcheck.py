@@ -94,7 +94,26 @@ check("隐私政策含 Analytics", "Analytics" in priv, "缺失")
 for r in ["app/pricing", "app/download", "app/api/checkout"]:
     check(f"无 {r}", not os.path.exists(r), "仍存在")
 
-# 12. 构建产物路由数
+# 12. title 不应重复品牌（layout template 为 %s，各页自带后缀）
+lay_tpl = re.search(r'template: "([^"]*)"', lay)
+check("layout template=%s", bool(lay_tpl and lay_tpl.group(1) == "%s"), lay_tpl.group(1) if lay_tpl else "无")
+for slug in slugs:
+    s = open(f"app/tools/{slug}/page.tsx", encoding="utf-8").read()
+    m = re.search(r'title: "([^"]+)"', s)
+    t = m.group(1) if m else ""
+    check(f"title 不重复 {slug}", t.count("轻盒工具箱") == 1, t)
+
+# 13. 共享 dropzone 与 social 页无英文 UI 片段
+dz = open("components/tool/file-dropzone.tsx", encoding="utf-8").read()
+check("dropzone 中文", "拖入" in dz and "本地处理，绝不上传" in dz, "英文残留")
+ecc = open("app/tools/qr-code/qr-code-client.tsx", encoding="utf-8").read()
+check("QR 纠错中文", "低（约 7%）" in ecc and "高（约 30%）" in ecc, "英文残留")
+soc = open("app/tools/social-preview/social-preview-client.tsx", encoding="utf-8").read()
+prev = open("app/tools/social-preview/previews.tsx", encoding="utf-8").read()
+check("social 中文", "占位图" in soc and "这些预览是本地生成的" in soc, "英文残留")
+check("previews 中文", "谷歌搜索" in prev and "未命名页面" in prev, "英文残留")
+
+# 14. 构建产物路由数
 if os.path.isdir(".next/server/app"):
     htmls = []
     for root, dirs, files in os.walk(".next/server/app"):
