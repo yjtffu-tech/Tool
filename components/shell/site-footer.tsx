@@ -12,7 +12,7 @@ export function SiteFooter() {
           </p>
           <p className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
             <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-accent" aria-hidden />
-            100% 本地浏览器处理：您的文件绝不会上传至任何服务器
+            文件在你的设备上处理，不会上传到我们的服务器（<Link href="/privacy#exceptions">例外说明</Link>）
           </p>
         </div>
 
@@ -20,6 +20,7 @@ export function SiteFooter() {
           <Link href="/about" className="text-xs text-muted-foreground transition-colors hover:text-foreground">关于我们</Link>
           <Link href="/privacy" className="text-xs text-muted-foreground transition-colors hover:text-foreground">隐私政策</Link>
           <Link href="/terms" className="text-xs text-muted-foreground transition-colors hover:text-foreground">使用条款</Link>
+          <Link href="/open-source" className="text-xs text-muted-foreground transition-colors hover:text-foreground">开源致谢</Link>
           <a href="mailto:tool@leyunke.com" className="text-xs text-muted-foreground transition-colors hover:text-foreground">联系我们</a>
         </nav>
       </div>
