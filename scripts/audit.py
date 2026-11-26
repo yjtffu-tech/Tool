@@ -106,14 +106,18 @@ for path in PAGES:
     check(f"{path} lang=zh-CN", p.lang == "zh-CN", p.lang)
     # P0 阶段必须自指 canonical；hreflang 到 P1 才要求
     canon = [a.get("href", "") for a in p.link if a.get("rel", "").lower() == "canonical"]
-    check(f"{path} canonical 自指", bool(canon) and BASE + path in canon[0], str(canon[:1]))
+    expected = (BASE + path).rstrip("/")
+    got = canon[0].rstrip("/") if canon else ""
+    check(f"{path} canonical 自指", bool(canon) and got == expected, str(canon[:1]))
     if PHASE != "p0":
         alts = [a.get("hreflang", "") for a in p.link if a.get("rel", "").lower() == "alternate" and a.get("hreflang")]
         check(f"{path} hreflang 三语", {"zh-CN", "en", "x-default"}.issubset(set(alts)), str(alts))
     for b in BANNED:
         check(f"{path} 无旧词 {b}", b not in html and b not in txt, "")
-    for b in LEGACY:
-        check(f"{path} 无遗留词 {b}", b not in txt, "")
+    # 遗留词从 P2 起检查（P2 清文案、P4 重写内容、P5 重写合规页）
+    if PHASE != "p0":
+        for b in LEGACY:
+            check(f"{path} 无遗留词 {b}", b not in txt, "")
 
 # 废弃路由
 for path in ["/pricing", "/download"]:
