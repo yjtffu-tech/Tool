@@ -27,6 +27,12 @@ export const metadata: Metadata = {
     "在线工具", "视频转换", "图片压缩", "PDF合并", "PDF拆分", "二维码生成",
     "免费工具", "本地处理", "隐私保护", BRAND_ZH, "Leyun Tools",
   ],
+  // 全站不收录：配合 robots.txt 与 X-Robots-Tag 响应头三层生效
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+  },
   openGraph: {
     siteName: BRAND_ZH,
     locale: "zh_CN",
