@@ -20,11 +20,11 @@ import { cn } from "@/lib/utils";
 
 function Logo({ compact = false }: { compact?: boolean }) {
   return (
-    <Link href="/" className="flex items-center gap-2 px-2" aria-label="轻盒工具箱首页">
+    <Link href="/" className="flex items-center gap-2 px-2" aria-label="乐云工具箱首页">
       <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-accent text-accent-foreground">
         <Wrench className="h-4 w-4" aria-hidden />
       </span>
-      {!compact && <span className="text-sm font-semibold tracking-tight">LiteBox</span>}
+      {!compact && <span className="text-sm font-semibold tracking-tight">Leyun</span>}
     </Link>
   );
 }

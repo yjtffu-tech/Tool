@@ -23,7 +23,7 @@ const TITLE_LIMIT = 60;
 const DESC_LIMIT = 160;
 
 const DEFAULTS = {
-  title: "轻盒工具箱，免费私密的浏览器工具",
+  title: "乐云工具箱，免费私密的浏览器工具",
   description:
     "格式化 JSON、生成 SVG 波形、制作 CSS 动画等。所有工具都在浏览器中运行，不上传、不追踪、无需注册。",
   url: "https://www.leyunke.com/tools",

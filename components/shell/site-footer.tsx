@@ -8,7 +8,7 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 sm:flex-row sm:justify-between">
         <div className="flex flex-col items-center gap-1 sm:items-start">
           <p className="text-xs text-muted-foreground">
-            &copy; 2026 轻盒工具箱 (LiteBox). All Rights Reserved.
+            &copy; 2026 乐云工具箱
           </p>
           <p className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
             <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-accent" aria-hidden />

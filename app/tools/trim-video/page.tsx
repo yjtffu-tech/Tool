@@ -4,7 +4,7 @@ import { TrimVideoClient } from "./trim-video-client";
 import content from "./content";
 
 export const metadata: Metadata = {
-  title: "在线视频裁剪工具 | 轻盒工具箱",
+  title: "在线视频裁剪工具 | 乐云工具箱",
   description:
     "按起止时间截取视频片段，在浏览器本地完成，无需上传原片。",
 };

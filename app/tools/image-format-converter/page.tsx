@@ -4,7 +4,7 @@ import { ImageFormatConverterClient } from "./image-format-converter-client";
 import content from "./content";
 
 export const metadata: Metadata = {
-  title: "在线图片格式转换工具 | 轻盒工具箱",
+  title: "在线图片格式转换工具 | 乐云工具箱",
   description:
     "在 JPG、PNG、WebP 等常见图片格式之间转换，本地完成。",
 };

@@ -3,9 +3,9 @@ import { LegalPage } from "@/components/legal/legal-page";
 import { LIVE_TOOL_COUNT } from "@/lib/tools-registry";
 
 export const metadata: Metadata = {
-  title: "隐私政策 - 轻盒工具箱",
+  title: "隐私政策 - 乐云工具箱",
   description:
-    "轻盒工具箱如何处理数据：所有文件都在你的浏览器中本地处理，绝不上传；同时说明 Google Analytics 与 Google AdSense Cookie 的使用。",
+    "乐云工具箱如何处理数据：所有文件都在你的浏览器中本地处理，绝不上传；同时说明 Google Analytics 与 Google AdSense Cookie 的使用。",
 };
 
 export default function Page() {
@@ -13,11 +13,11 @@ export default function Page() {
     <LegalPage
       title="隐私政策"
       lastUpdated="2026 年 11 月 25 日"
-      intro="轻盒工具箱的设计原则是：你的文件永远不离开你的设备。本政策说明我们处理哪些极有限的数据，以及为什么。"
+      intro="乐云工具箱的设计原则是：你的文件永远不离开你的设备。本政策说明我们处理哪些极有限的数据，以及为什么。"
     >
       <h2>一、我们是谁</h2>
       <p>
-        轻盒工具箱（英文名 LiteBox，以下简称「我们」）运营网站{" "}
+        乐云工具箱（英文名 Leyun Tools，以下简称「我们」）运营网站{" "}
         <a href="https://www.leyunke.com">https://www.leyunke.com</a> 及其上的全部工具。
         隐私相关问题或请求，请发送邮件至{" "}
         <a href="mailto:tool@leyunke.com">tool@leyunke.com</a>。

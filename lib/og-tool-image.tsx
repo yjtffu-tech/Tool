@@ -32,7 +32,7 @@ export function toolOgImage(slug: string): ImageResponse {
 
   // 回退到通用中文文案，避免抛出异常
   // would fail the build for the whole route.
-  const name = tool?.name ?? "轻盒工具箱";
+  const name = tool?.name ?? "乐云工具箱";
   const description =
     tool?.description ?? "免费、私密、浏览器本地运行的在线工具，文件绝不离开你的设备。";
   const category = tool?.category ?? "Free online tools";
@@ -80,7 +80,7 @@ export function toolOgImage(slug: string): ImageResponse {
               <path d={WRENCH} />
             </svg>
           </div>
-          <div style={{ fontSize: 40, fontWeight: 700, letterSpacing: -1 }}>LiteBox</div>
+          <div style={{ fontSize: 40, fontWeight: 700, letterSpacing: -1 }}>Leyun Tools</div>
         </div>
 
         {/* Body: category pill, tool name, description */}

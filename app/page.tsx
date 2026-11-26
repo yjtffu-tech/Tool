@@ -10,7 +10,7 @@ export default function DashboardPage() {
     <div className="mx-auto w-full max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
       <div className="mx-auto max-w-2xl text-center">
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-          轻盒工具箱 - 免费、隐私优先的在线工具
+          乐云工具箱 - 免费、隐私优先的在线工具
         </h1>
         <p className="mt-3 text-base leading-relaxed text-muted-foreground">
           {LIVE_TOOL_COUNT} 款实用工具，全部在你的浏览器中运行。无需注册、没有水印，你放入的任何文件都不会离开设备。
@@ -47,7 +47,7 @@ export default function DashboardPage() {
       </div>
 
       <p className="mt-16 border-t border-border pt-6 text-center text-xs text-muted-foreground">
-        轻盒工具箱完全免费，所有处理均在本地完成。按 Ctrl K 可快速搜索工具。
+        乐云工具箱完全免费，所有处理均在本地完成。按 Ctrl K 可快速搜索工具。
       </p>
     </div>
   );

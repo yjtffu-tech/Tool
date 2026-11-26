@@ -3,17 +3,17 @@ import { LegalPage } from "@/components/legal/legal-page";
 import { LIVE_TOOL_COUNT } from "@/lib/tools-registry";
 
 export const metadata: Metadata = {
-  title: "关于我们 - 轻盒工具箱",
+  title: "关于我们 - 乐云工具箱",
   description:
-    "轻盒工具箱致力于为华人创作者与办公人群提供免费、安全、无需注册的在线效率工具。",
+    "乐云工具箱致力于为华人创作者与办公人群提供免费、安全、无需注册的在线效率工具。",
 };
 
 export default function Page() {
   return (
     <LegalPage
-      title="关于轻盒工具箱"
+      title="关于乐云工具箱"
       lastUpdated="2026 年 11 月 25 日"
-      intro="轻盒工具箱（LiteBox）致力于为华人创作者、办公人群和跨境电商从业者提供免费、安全、无需注册的在线效率工具。"
+      intro="乐云工具箱（Leyun Tools）致力于为华人创作者、办公人群和跨境电商从业者提供免费、安全、无需注册的在线效率工具。"
     >
       <h2>我们为什么做这件事</h2>
       <p>
@@ -22,7 +22,7 @@ export default function Page() {
         不知何处的服务器。对处理合同、报价单、商品图和个人照片的用户来说，这些都意味着额外的隐私风险。
       </p>
       <p>
-        轻盒工具箱从一开始就选择了另一条路：<strong>所有工具都在你的浏览器里运行</strong>。
+        乐云工具箱从一开始就选择了另一条路：<strong>所有工具都在你的浏览器里运行</strong>。
         文件从选中到下载，全程停留在本机，没有任何上传步骤。你不需要相信我们「会妥善保管你的文件」，
         因为我们在技术上根本没有机会接触它们。
       </p>

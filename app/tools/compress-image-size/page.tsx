@@ -4,7 +4,7 @@ import { CompressImageSizeClient } from "./compress-image-size-client";
 import content from "./content";
 
 export const metadata: Metadata = {
-  title: "在线图片无损压缩工具 | 轻盒工具箱",
+  title: "在线图片无损压缩工具 | 乐云工具箱",
   description:
     "压缩 JPG、PNG、WebP 图片体积，可预览画质，本地处理。",
 };

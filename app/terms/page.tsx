@@ -3,9 +3,9 @@ import { LegalPage } from "@/components/legal/legal-page";
 import { LIVE_TOOL_COUNT } from "@/lib/tools-registry";
 
 export const metadata: Metadata = {
-  title: "使用条款 - 轻盒工具箱",
+  title: "使用条款 - 乐云工具箱",
   description:
-    "轻盒工具箱的使用条款：免费、浏览器本地运行的工具，用户合法使用边界与免责声明。",
+    "乐云工具箱的使用条款：免费、浏览器本地运行的工具，用户合法使用边界与免责声明。",
 };
 
 export default function Page() {
@@ -13,10 +13,10 @@ export default function Page() {
     <LegalPage
       title="使用条款"
       lastUpdated="2026 年 11 月 25 日"
-      intro="轻盒工具箱是一套完全在你的浏览器中运行的免费工具。本条款说明你对本站的合理预期、我们对你的要求，以及免费软件能够承诺的边界。"
+      intro="乐云工具箱是一套完全在你的浏览器中运行的免费工具。本条款说明你对本站的合理预期、我们对你的要求，以及免费软件能够承诺的边界。"
     >
       <p>
-        轻盒工具箱（以下简称「本站」或「我们」）运营于{" "}
+        乐云工具箱（以下简称「本站」或「我们」）运营于{" "}
         <a href="https://www.leyunke.com">https://www.leyunke.com</a>。
         本使用条款是你与我们就使用本站达成的法律协议。
       </p>
@@ -50,7 +50,7 @@ export default function Page() {
 
       <h2>四、知识产权</h2>
       <p>
-        本站的界面设计、文字内容与源代码归轻盒工具箱所有。你通过工具生成的文件归你所有——
+        本站的界面设计、文字内容与源代码归乐云工具箱所有。你通过工具生成的文件归你所有——
         我们不主张对它们拥有任何权利。本站显示的第三方商标（如 Google、平台名称）归各自权利人所有。
       </p>
 

@@ -4,7 +4,7 @@ import { ImagesToPdfClient } from "../_shared/images-to-pdf-client";
 import content from "./content";
 
 export const metadata: Metadata = {
-  title: "在线图片转 PDF 工具 | 轻盒工具箱",
+  title: "在线图片转 PDF 工具 | 乐云工具箱",
   description:
     "把多张 JPG、PNG 图片按顺序合成 PDF，浏览器本地完成。",
 };

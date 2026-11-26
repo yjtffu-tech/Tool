@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 // Branded social share image, generated at build time. 1200x630 is the
 // standard Open Graph / Twitter "summary_large_image" size.
-export const alt = "轻盒工具箱 — 免费、私密、浏览器本地运行的在线工具";
+export const alt = "乐云工具箱 — 免费、私密、浏览器本地运行的在线工具";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -63,7 +63,7 @@ export default function OpengraphImage() {
             lineHeight: 1,
           }}
         >
-          轻盒工具箱
+          乐云工具箱
         </div>
 
         {/* Tagline */}

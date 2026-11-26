@@ -76,8 +76,8 @@ function RelatedTools({ tool }: { tool: ToolDef }) {
 
 /**
  * Long-form content rendered beneath a tool: what it does, how to use it,
- * common uses, why LiteBox, FAQs, and related tools. 123apps-style structure,
- * LiteBox design system.
+ * common uses, why Leyun Tools, FAQs, and related tools. 123apps-style structure,
+ * Leyun Tools design system.
  */
 export function ToolContentSections({
   tool,
@@ -138,9 +138,9 @@ export function ToolContentSections({
         </section>
       )}
 
-      {/* Why LiteBox */}
+      {/* Why Leyun Tools */}
       <section>
-        <h2 className="text-lg font-semibold tracking-tight">为什么选择轻盒工具箱</h2>
+        <h2 className="text-lg font-semibold tracking-tight">为什么选择乐云工具箱</h2>
         <div className="mt-5 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
           {WHY.map(({ icon: Icon, title, body }) => (
             <div key={title} className="flex flex-col gap-1.5">
