@@ -6,7 +6,7 @@ import content from "./content";
 export const metadata: Metadata = {
   title: "在线视频尺寸调整与压缩工具 | 轻盒工具箱",
   description:
-    "Scale a video to a new resolution or preset. Runs 100% in your browser — no uploads.",
+    "调整视频分辨率与体积，适配常见平台上传要求，本地处理。",
 };
 
 export default function Page() {

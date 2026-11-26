@@ -6,7 +6,7 @@ import content from "./content";
 export const metadata: Metadata = {
   title: "在线 PDF 压缩工具 | 轻盒工具箱",
   description:
-    "Shrink a bulky PDF by rasterizing pages to compressed images. Runs 100% in your browser — no uploads.",
+    "减小 PDF 文件体积，便于邮件与系统上传，内容不外泄。",
 };
 
 export default function Page() {

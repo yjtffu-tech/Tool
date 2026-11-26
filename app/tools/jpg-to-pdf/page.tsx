@@ -6,7 +6,7 @@ import content from "./content";
 export const metadata: Metadata = {
   title: "在线图片转 PDF 工具 | 轻盒工具箱",
   description:
-    "Combine JPG photos into a single multi-page PDF. Runs 100% in your browser — no uploads.",
+    "把多张 JPG、PNG 图片按顺序合成 PDF，浏览器本地完成。",
 };
 
 export default function Page() {

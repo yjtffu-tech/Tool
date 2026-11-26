@@ -6,7 +6,7 @@ import content from "./content";
 export const metadata: Metadata = {
   title: "在线图片无损压缩工具 | 轻盒工具箱",
   description:
-    "Shrink PNG, JPG, and WebP images with a live quality slider and side-by-side preview. 100% in your browser.",
+    "压缩 JPG、PNG、WebP 图片体积，可预览画质，本地处理。",
 };
 
 export default function Page() {

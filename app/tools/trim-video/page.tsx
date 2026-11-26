@@ -6,7 +6,7 @@ import content from "./content";
 export const metadata: Metadata = {
   title: "在线视频裁剪工具 | 轻盒工具箱",
   description:
-    "Cut video clips locally with in-browser FFmpeg. Your video never leaves this device.",
+    "按起止时间截取视频片段，在浏览器本地完成，无需上传原片。",
 };
 
 export default function Page() {

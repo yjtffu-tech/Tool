@@ -6,7 +6,7 @@ import content from "./content";
 export const metadata: Metadata = {
   title: "在线 PDF 拆分工具 | 轻盒工具箱",
   description:
-    "Pick pages from a thumbnail grid and extract them to a new PDF. 100% in your browser.",
+    "按页码范围或逐页导出拆分 PDF，文件不上传。",
 };
 
 export default function Page() {

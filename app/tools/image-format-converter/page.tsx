@@ -6,7 +6,7 @@ import content from "./content";
 export const metadata: Metadata = {
   title: "在线图片格式转换工具 | 轻盒工具箱",
   description:
-    "Convert images between PNG, JPEG, and WebP with a single canvas re-encode. 100% in your browser.",
+    "在 JPG、PNG、WebP 等常见图片格式之间转换，本地完成。",
 };
 
 export default function Page() {

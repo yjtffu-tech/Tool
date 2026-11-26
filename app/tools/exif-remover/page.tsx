@@ -6,7 +6,7 @@ import content from "./content";
 export const metadata: Metadata = {
   title: "在线照片隐私信息清除工具 | 轻盒工具箱",
   description:
-    "Strip EXIF metadata (location, camera, date) from a photo, right in your browser. No uploads, no sign-up.",
+    "清除照片中的拍摄位置与设备信息，减少隐私泄露风险。",
 };
 
 export default function Page() {

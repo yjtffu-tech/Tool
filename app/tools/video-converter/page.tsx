@@ -6,7 +6,7 @@ import content from "./content";
 export const metadata: Metadata = {
   title: "在线视频格式转换工具 | 轻盒工具箱",
   description:
-    "Convert between MP4, WebM, MOV, and MKV. Runs 100% in your browser — no uploads.",
+    "在浏览器内转换 MP4、WebM、MOV 等常见视频格式，文件不上传。",
 };
 
 export default function Page() {
