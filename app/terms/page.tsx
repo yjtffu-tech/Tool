@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal/legal-page";
 import { LIVE_TOOL_COUNT } from "@/lib/tools-registry";
+import { canonicalUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "使用条款 - 乐云工具箱",
   description:
     "乐云工具箱的使用条款：免费、浏览器本地运行的工具，用户合法使用边界与免责声明。",
+  alternates: { canonical: canonicalUrl("/terms") },
 };
 
 export default function Page() {

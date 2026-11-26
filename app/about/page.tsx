@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal/legal-page";
 import { LIVE_TOOL_COUNT } from "@/lib/tools-registry";
+import { canonicalUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "关于我们 - 乐云工具箱",
   description:
     "乐云工具箱致力于为华人创作者与办公人群提供免费、安全、无需注册的在线效率工具。",
+  alternates: { canonical: canonicalUrl("/about") },
 };
 
 export default function Page() {

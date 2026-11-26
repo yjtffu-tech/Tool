@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal/legal-page";
 import { LIVE_TOOL_COUNT } from "@/lib/tools-registry";
+import { canonicalUrl } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "隐私政策 - 乐云工具箱",
   description:
     "乐云工具箱如何处理数据：所有文件都在你的浏览器中本地处理，绝不上传；同时说明 Google Analytics 与 Google AdSense Cookie 的使用。",
+  alternates: { canonical: canonicalUrl("/privacy") },
 };
 
 export default function Page() {
