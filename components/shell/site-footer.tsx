@@ -20,7 +20,7 @@ export function SiteFooter() {
           <Link href="/about" className="text-xs text-muted-foreground transition-colors hover:text-foreground">关于我们</Link>
           <Link href="/privacy" className="text-xs text-muted-foreground transition-colors hover:text-foreground">隐私政策</Link>
           <Link href="/terms" className="text-xs text-muted-foreground transition-colors hover:text-foreground">使用条款</Link>
-          <a href="mailto:contact@liteboxtools.com" className="text-xs text-muted-foreground transition-colors hover:text-foreground">联系我们</a>
+          <a href="mailto:tool@leyunke.com" className="text-xs text-muted-foreground transition-colors hover:text-foreground">联系我们</a>
         </nav>
       </div>
     </footer>

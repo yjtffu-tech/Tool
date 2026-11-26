@@ -49,7 +49,7 @@ export default function Page() {
       <h2>联系我们</h2>
       <p>
         你的建议、问题或合作意向对我们都很重要。请发送邮件至{" "}
-        <a href="mailto:contact@liteboxtools.com">contact@liteboxtools.com</a>，我们会尽快回复。
+        <a href="mailto:tool@leyunke.com">tool@leyunke.com</a>，我们会尽快回复。
       </p>
     </LegalPage>
   );

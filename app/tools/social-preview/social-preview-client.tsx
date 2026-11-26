@@ -26,7 +26,7 @@ const DEFAULTS = {
   title: "轻盒工具箱，免费私密的浏览器工具",
   description:
     "格式化 JSON、生成 SVG 波形、制作 CSS 动画等。所有工具都在浏览器中运行，不上传、不追踪、无需注册。",
-  url: "https://liteboxtools.com/tools",
+  url: "https://www.leyunke.com/tools",
 };
 
 /** Draw a simple 1200x630 gradient placeholder entirely on a local canvas. */

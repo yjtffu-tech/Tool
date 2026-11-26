@@ -136,7 +136,7 @@ export function toolOgImage(slug: string): ImageResponse {
             color: "#6b7280",
           }}
         >
-          <div style={{ color: "#eab308", fontWeight: 600 }}>liteboxtools.com</div>
+          <div style={{ color: "#eab308", fontWeight: 600 }}>www.leyunke.com</div>
           <div>·</div>
           <div>100% 浏览器本地运行 — 无需上传</div>
         </div>

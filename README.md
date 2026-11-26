@@ -6,7 +6,7 @@
 
 **你放入的文件绝不会离开设备。** 无上传、无账号、无水印。打开工具即可使用。
 
-站点：https://liteboxtools.com
+站点：https://www.leyunke.com
 
 </div>
 
@@ -63,7 +63,7 @@ npm run typecheck  # 类型检查
 - `/terms` 使用条款
 - `/about` 关于我们
 
-联系邮箱：contact@liteboxtools.com
+联系邮箱：tool@leyunke.com
 
 ## License
 

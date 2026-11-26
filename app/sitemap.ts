@@ -1,7 +1,9 @@
 import type { MetadataRoute } from "next";
 import { TOOLS } from "@/lib/tools-registry";
 
-const BASE = "https://liteboxtools.com";
+import { SITE_URL } from "@/lib/site-config";
+
+const BASE = SITE_URL;
 
 /**
  * 站点地图：仅收录首页、三个合规页面与 14 个已完整汉化的工具页。

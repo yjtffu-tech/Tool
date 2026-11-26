@@ -18,9 +18,9 @@ export default function Page() {
       <h2>一、我们是谁</h2>
       <p>
         轻盒工具箱（英文名 LiteBox，以下简称「我们」）运营网站{" "}
-        <a href="https://liteboxtools.com">https://liteboxtools.com</a> 及其上的全部工具。
+        <a href="https://www.leyunke.com">https://www.leyunke.com</a> 及其上的全部工具。
         隐私相关问题或请求，请发送邮件至{" "}
-        <a href="mailto:contact@liteboxtools.com">contact@liteboxtools.com</a>。
+        <a href="mailto:tool@leyunke.com">tool@leyunke.com</a>。
       </p>
 
       <h2>二、你的文件永不离开设备</h2>
@@ -98,7 +98,7 @@ export default function Page() {
       <h2>八、联系我们</h2>
       <p>
         对本政策有任何疑问，请发送邮件至{" "}
-        <a href="mailto:contact@liteboxtools.com">contact@liteboxtools.com</a>。
+        <a href="mailto:tool@leyunke.com">tool@leyunke.com</a>。
       </p>
     </LegalPage>
   );

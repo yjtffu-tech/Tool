@@ -17,7 +17,7 @@ export default function Page() {
     >
       <p>
         轻盒工具箱（以下简称「本站」或「我们」）运营于{" "}
-        <a href="https://liteboxtools.com">https://liteboxtools.com</a>。
+        <a href="https://www.leyunke.com">https://www.leyunke.com</a>。
         本使用条款是你与我们就使用本站达成的法律协议。
       </p>
 
@@ -80,7 +80,7 @@ export default function Page() {
       <h2>八、联系我们</h2>
       <p>
         对本条款有任何疑问，请发送邮件至{" "}
-        <a href="mailto:contact@liteboxtools.com">contact@liteboxtools.com</a>。
+        <a href="mailto:tool@leyunke.com">tool@leyunke.com</a>。
       </p>
     </LegalPage>
   );

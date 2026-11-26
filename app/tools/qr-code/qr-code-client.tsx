@@ -20,7 +20,7 @@ const ECC_LABELS: Record<EccLevel, string> = {
 };
 
 export function QrCodeClient() {
-  const [text, setText] = useState("https://liteboxtools.com");
+  const [text, setText] = useState("https://www.leyunke.com");
   const [size, setSize] = useState(320);
   const [ecc, setEcc] = useState<EccLevel>("M");
   const [dark, setDark] = useState("#000000");

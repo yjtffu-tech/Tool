@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 
-const BASE = "https://liteboxtools.com";
+import { SITE_URL } from "@/lib/site-config";
+
+const BASE = SITE_URL;
 
 /** robots.txt served at /robots.txt. Everything is crawlable except the API. */
 export default function robots(): MetadataRoute.Robots {
